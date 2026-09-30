@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>東京冬旅 2027｜兩家人行程</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700&family=Noto+Serif+TC:wght@600;900&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --snow:#F4F6F8; --ice:#DDE6EE; --ink:#1E2A44; --slate:#5B6B82;
+    --line:#C73E2E; --gold:#9A7020; --white:#FFFFFF;
+    --notebg:#FBF6EA; --navbg:rgba(244,246,248,.94);
+  }
+  @media (prefers-color-scheme:dark){
+    :root:not([data-theme="light"]){
+      --snow:#121826; --ice:#2A3550; --ink:#E6EAF2; --slate:#9AA7BD;
+      --line:#E0604F; --gold:#D6A94A; --white:#1A2234;
+      --notebg:#2A2416; --navbg:rgba(18,24,38,.94);
+    }
+  }
+  :root[data-theme="dark"]{
+    --snow:#121826; --ice:#2A3550; --ink:#E6EAF2; --slate:#9AA7BD;
+    --line:#E0604F; --gold:#D6A94A; --white:#1A2234;
+    --notebg:#2A2416; --navbg:rgba(18,24,38,.94);
+  }
+  :root{box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+  html{scroll-padding-top:env(safe-area-inset-top,0px)}
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  @media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+  body{font-family:"Noto Sans TC",system-ui,sans-serif;background:var(--snow);color:var(--ink);line-height:1.7;font-size:16px}
+  a{color:inherit}
+  :focus-visible{outline:3px solid var(--line);outline-offset:2px}
+
+  header{padding:48px 22px 28px;max-width:720px;margin:0 auto}
+  .title{font-family:"Noto Serif TC",serif;font-weight:900;font-size:clamp(40px,11vw,68px);line-height:1.05;letter-spacing:.02em}
+  .title span{display:block;font-size:.42em;font-weight:600;color:var(--slate);letter-spacing:.08em;margin-top:10px}
+  .who{margin-top:18px;color:var(--slate)}
+
+  .flights{max-width:720px;margin:0 auto;padding:0 22px;display:grid;gap:12px;grid-template-columns:1fr 1fr}
+  @media(max-width:520px){.flights{grid-template-columns:1fr}}
+  .ticket{background:var(--white);border:1px solid var(--ice);border-radius:14px;padding:16px 18px;position:relative}
+  .ticket h3{font-size:14px;color:var(--slate);font-weight:500}
+  .ticket .route{font-size:22px;font-weight:700;margin:4px 0}
+  .ticket .route small{font-size:14px;font-weight:500;color:var(--slate)}
+  .ticket p{font-size:14px;color:var(--slate)}
+
+  nav{position:sticky;top:env(safe-area-inset-top,0px);z-index:5;background:var(--navbg);backdrop-filter:blur(6px);border-bottom:1px solid var(--ice);margin-top:28px}
+  nav ul{list-style:none;display:flex;gap:6px;overflow-x:auto;max-width:720px;margin:0 auto;padding:10px 22px;scrollbar-width:none}
+  nav a{display:block;white-space:nowrap;text-decoration:none;font-size:14px;padding:6px 12px;border-radius:999px;border:1px solid var(--ice);background:var(--white)}
+  nav a:hover{border-color:var(--line)}
+
+  main{max-width:720px;margin:0 auto;padding:24px 22px 40px}
+  .rail{position:relative;padding-left:34px}
+  .rail::before{content:"";position:absolute;left:9px;top:10px;bottom:10px;width:5px;border-radius:3px;background:var(--line)}
+  .day{position:relative;padding:4px 0 34px;scroll-margin-top:70px}
+  .day::before{content:"";position:absolute;left:-33px;top:6px;width:13px;height:13px;border-radius:50%;background:var(--white);border:4px solid var(--line)}
+  .date{font-size:14px;color:var(--slate);font-weight:500}
+  .day h2{font-family:"Noto Serif TC",serif;font-size:26px;line-height:1.3;margin:2px 0 12px}
+  .block{background:var(--white);border:1px solid var(--ice);border-radius:12px;padding:14px 16px;margin-top:10px}
+  .block h4{font-size:14px;color:var(--line);margin-bottom:4px}
+  .block ul{padding-left:1.1em}
+  .block li{margin:2px 0}
+  .note{border-left:4px solid var(--gold);background:var(--notebg);border-radius:8px;padding:10px 14px;margin-top:10px;font-size:15px}
+
+  section.info{max-width:720px;margin:0 auto;padding:0 22px 60px}
+  section.info h2{font-family:"Noto Serif TC",serif;font-size:24px;margin:26px 0 10px}
+  table{width:100%;border-collapse:collapse;background:var(--white);border-radius:12px;overflow:hidden;border:1px solid var(--ice);font-size:15px}
+  th,td{text-align:left;padding:10px 12px;border-bottom:1px solid var(--ice);vertical-align:top}
+  th{background:var(--ice);font-weight:700}
+  .tablewrap{overflow-x:auto}
+  footer{text-align:center;color:var(--slate);font-size:13px;padding:0 22px 40px}
+</style>
+</head>
+<body>
+
+<header>
+  <h1 class="title">東京冬旅<span>2027．1/28 – 2/5</span></h1>
+  <p class="who">兩家人同行，4 大 4 小。住宿以淺草站周邊為據點，2/4 晚上改住羽田 T3 直結飯店。</p>
+</header>
+
+<div class="flights">
+  <div class="ticket">
+    <h3>去程｜樂桃 MM860</h3>
+    <div class="route">TPE → HND <small>T1 → T3</small></div>
+    <p>1/28（四）20:55 起飛，1/29 00:50 抵達</p>
+  </div>
+  <div class="ticket">
+    <h3>回程｜台灣虎航 IT217</h3>
+    <div class="route">HND → TPE <small>T3 → T1</small></div>
+    <p>2/5（五）05:00 起飛，07:55 抵達</p>
+  </div>
+</div>
+
+<section class="info" id="flights" style="padding-bottom:0">
+  <h2>機票與行李（已確認）</h2>
+  <div class="block"><h4>機票</h4>
+    <ul><li>最新票價（Google 航班，9/29 查詢）：樂桃每人 TWD 9,360、虎航每人 TWD 7,408</li>
+    <li>8 人機票約 TWD 134,100（原本 127,856，已上漲約 6,300）</li>
+    <li>兩家分開訂，各自一個訂位代號，盡快到兩家官網下訂</li></ul></div>
+  <div class="block"><h4>行李</h4>
+    <ul><li>去程不買托運：樂桃手提每人 2 件、合計 7 公斤，冬衣建議穿上飛機</li>
+    <li>回程每家加購虎航 2 份 25 公斤；同訂位代號可合併計重，每家共 50 公斤</li>
+    <li>25 公斤約 TWD 1,450／份（估算），兩家共約 TWD 5,800</li>
+    <li>行李要在訂票時一起買，現場加購和超重（約 NT$500／公斤）貴很多</li></ul></div>
+  <div class="block"><h4>機票＋行李合計</h4>
+    <ul><li>每家約 TWD 69,970，兩家約 TWD 139,940</li></ul></div>
+</section>
+
+<nav aria-label="日期">
+  <ul>
+    <li><a href="#flights">機票行李</a></li>
+    <li><a href="#d0128">1/28</a></li>
+    <li><a href="#d0129">1/29 哈利波特</a></li>
+    <li><a href="#d0130">1/30 輕井澤泡湯</a></li>
+    <li><a href="#d0131">1/31 台場＋迪士尼飯店</a></li>
+    <li><a href="#d0201">2/1 迪士尼海洋</a></li>
+    <li><a href="#d0202">2/2 澀谷＋觀光巴士</a></li>
+    <li><a href="#d0203">2/3 吉卜力＋屋形船</a></li>
+    <li><a href="#d0204">2/4 淺草抹茶</a></li>
+    <li><a href="#d0205">2/5 回國</a></li>
+    <li><a href="#backup">雨天備案</a></li>
+    <li><a href="#hotels">住宿</a></li>
+    <li><a href="#budget">預算</a></li>
+    <li><a href="#booking">訂票清單</a></li>
+  </ul>
+</nav>
+
+<main>
+<div class="rail">
+
+  <article class="day" id="d0128">
+    <p class="date">1/28（四）深夜 → 1/29 凌晨</p>
+    <h2>抵達羽田，前往淺草</h2>
+    <div class="block"><h4>交通</h4>
+      <ul><li>00:50 抵達 T3，出關約 1:30–2:00，此時電車已收班</li>
+      <li>預約ミニバン（廂型車），或 2–3 台計程車到淺草，約 30 分鐘</li>
+      <li>羽田計程車招呼站到台東區可直接用定額運賃：深夜 ¥10,800＋高速費／台</li></ul></div>
+    <div class="block"><h4>用餐</h4><ul><li>T3 便利商店 24 小時營業，先買隔天早餐</li></ul></div>
+    <p class="note">飯店要從 1/28 晚上開始訂，凌晨抵達才有房間可以入住。</p>
+  </article>
+
+  <article class="day" id="d0129">
+    <p class="date">1/29（五）</p>
+    <h2>哈利波特影城</h2>
+    <div class="block"><h4>交通</h4>
+      <ul><li>銀座線到上野 → JR 山手線到池袋 → 西武池袋線到豐島園，約 45–50 分鐘</li>
+      <li>豐島園站步行約 2 分鐘到影城</li></ul></div>
+    <div class="block"><h4>用餐</h4>
+      <ul><li>早午餐：飯店附近，睡飽再出門</li>
+      <li>午餐：館內 Food Hall，記得喝奶油啤酒</li>
+      <li>晚餐：回程在池袋吃</li></ul></div>
+    <p class="note">預約 13:00 之後的場次。展區至少要逛 3–4 小時。</p>
+  </article>
+
+  <article class="day" id="d0130">
+    <p class="date">1/30（六）</p>
+    <h2>輕井澤：玩雪、星野溫泉蜻蜓之湯、榆樹街小鎮</h2>
+    <div class="block"><h4>交通</h4>
+      <ul><li>上野搭北陸新幹線到輕井澤，約 1 小時，8 人指定席要提前劃位</li>
+      <li>輕井澤站北口搭西武觀光巴士到「星野溫泉 蜻蜓之湯」，約 20 分鐘</li>
+      <li>回程同一條巴士回輕井澤站，再搭新幹線回上野</li></ul></div>
+    <div class="block"><h4>時間表</h4>
+      <ul><li>08:30 前後 上野出發，09:30 抵達輕井澤</li>
+      <li>09:30–12:30 王子購物廣場（南口），旁邊雪場讓小孩玩雪</li>
+      <li>12:30 午餐：購物廣場美食區</li>
+      <li>13:30 北口搭巴士到星野</li>
+      <li>14:00–15:30 星野溫泉 蜻蜓之湯</li>
+      <li>15:30–18:00 榆樹街小鎮（Harunire Terrace）散步、晚餐</li>
+      <li>18:30 搭巴士回站，19:00 後的新幹線回上野</li></ul></div>
+    <div class="block"><h4>蜻蜓之湯</h4>
+      <ul><li>1 月是一般時期：大人 ¥1,350、小孩（3 歲～國小）¥800</li>
+      <li>8 人合計約 ¥8,600</li>
+      <li>毛巾要另外付費，可以自己帶</li>
+      <li>男女分浴，小孩跟同性別的大人一起泡</li></ul></div>
+    <div class="block"><h4>晚餐</h4>
+      <ul><li>村民食堂（緊鄰蜻蜓之湯），信州食材定食，家庭聚餐方便</li>
+      <li>或榆樹街小鎮內的せきれい橋 川上庵，吃蕎麥麵</li></ul></div>
+    <p class="note">冬天舊輕井澤銀座通不少店家休息，所以改排星野一帶。如果下大雪影響新幹線，可以和 1/31 對調。</p>
+  </article>
+
+  <article class="day" id="d0131">
+    <p class="date">1/31（日）</p>
+    <h2>台場 → 入住迪士尼飯店</h2>
+    <div class="block"><h4>行李</h4>
+      <ul><li>大行李箱留在淺草飯店寄放，只帶一晚的過夜包</li></ul></div>
+    <div class="block"><h4>交通</h4>
+      <ul><li>淺草 → 新橋，轉百合海鷗號到台場，坐第一節車廂看前方景色</li>
+      <li>傍晚：臨海線東京電訊站 → 新木場，轉京葉線到舞濱，約 25 分鐘</li>
+      <li>舞濱轉迪士尼度假區線到飯店</li></ul></div>
+    <div class="block"><h4>行程</h4>
+      <ul><li>水陸兩用巴士（先預約，出發地點和班次查官網）</li>
+      <li>DiverCity 鋼彈立像、樂高探索中心、JOYPOLIS 擇一</li>
+      <li>16:00 後 check-in 迪士尼飯店</li></ul></div>
+    <div class="block"><h4>用餐</h4>
+      <ul><li>午餐：DiverCity 或 AQUA CITY 美食街，AQUA CITY 有拉麵國技館</li>
+      <li>晚餐：飯店餐廳，或舞濱站旁的 IKSPIARI</li></ul></div>
+    <p class="note">飯店住客隔天可用「Happy Entry」提早入園（入住當天不能用，部分日期不適用）。</p>
+  </article>
+
+  <article class="day" id="d0201">
+    <p class="date">2/1（一）</p>
+    <h2>東京迪士尼海洋</h2>
+    <div class="block"><h4>交通</h4>
+      <ul><li>從迪士尼飯店直接入園，不用一早從淺草出發</li>
+      <li>晚上：舞濱 → 京葉線到東京站，轉車回淺草飯店拿回寄放的行李，約 50–60 分鐘</li></ul></div>
+    <div class="block"><h4>用餐</h4>
+      <ul><li>用官方 App 行動點餐，不用排隊</li>
+      <li>熱門餐廳可以預約優先席位</li></ul></div>
+    <p class="note">夢幻泉鄉（Fantasy Springs）的設施建議加購 DPA。</p>
+  </article>
+
+  <article class="day" id="d0202">
+    <p class="date">2/2（二）</p>
+    <h2>澀谷：挽肉と米、任天堂、寶可夢中心 → 夜遊觀光巴士</h2>
+    <div class="block"><h4>交通</h4>
+      <ul><li>淺草搭銀座線直達澀谷，約 30 分鐘，不用轉車</li></ul></div>
+    <div class="block"><h4>時間表</h4>
+      <ul><li>10:00 睡飽出門，迪士尼隔天放慢步調</li>
+      <li>11:00 挽肉と米 澀谷店（WEB 記帳時段）</li>
+      <li>12:30 澀谷 PARCO：Nintendo TOKYO、寶可夢中心</li>
+      <li>下午：澀谷十字路口、忠犬八公像</li>
+      <li>17:00 JR 山手線到東京站，丸之內南口步行 3 分鐘到丸之內三菱大樓前 1 號站牌</li>
+      <li>18:00 前後 SKY BUS 夜景路線（約 50 分鐘）：東京鐵塔、彩虹大橋點燈</li>
+      <li>19:00 東京站周邊晚餐，搭車回淺草</li></ul></div>
+    <div class="block"><h4>SKY BUS 雙層露天觀光巴士</h4>
+      <ul><li>夜景路線：大人 ¥2,600、小孩（4–12 歲）¥1,300，8 人約 ¥15,600</li>
+      <li>白天的東京鐵塔・彩虹大橋路線：平日大人 ¥2,200、小孩 ¥1,100</li>
+      <li>網路預約從 30 天前開放，2/2 的班次約 1/3 起可以訂</li>
+      <li>二樓沒有屋頂，2 月晚上很冷：帽子、手套、圍巾一定要帶</li></ul></div>
+    <div class="block"><h4>挽肉と米 澀谷店</h4>
+      <ul><li>只能 WEB 記帳，每月 1 日開放到下個月底，2/2 的位子是 1/1 開放</li>
+      <li>記帳時要先付定食費；8 人分兩組、各 4 人記帳</li>
+      <li>店在 3 樓，要走窄樓梯，沒有電梯</li>
+      <li>每位入座者（含小孩）要點一份定食，全員到齊才帶位</li>
+      <li>完全無現金，只能刷卡或 QR 支付</li></ul></div>
+    <div class="block"><h4>晚餐</h4><ul><li>東京站一番街（拉麵街、角色商店街），逛完直接吃</li></ul></div>
+    <p class="note">挽肉と米吉祥寺店、澀谷店都是週三公休，所以不能排在 2/3。</p>
+  </article>
+
+  <article class="day" id="d0203">
+    <p class="date">2/3（三）</p>
+    <h2>宮崎駿主題日：吉卜力美術館 → 吉祥寺 → 淺草屋形船</h2>
+    <div class="block"><h4>交通</h4>
+      <ul><li>淺草 → 神田 → JR 中央線快速到三鷹，再搭巴士或步行，約 50–60 分鐘</li>
+      <li>美術館穿過井之頭公園步行約 15 分鐘到吉祥寺</li>
+      <li>15:30 從吉祥寺出發回淺草，約 50 分鐘，避開傍晚通勤尖峰</li></ul></div>
+    <div class="block"><h4>時間表</h4>
+      <ul><li>10:00 入場吉卜力美術館，約 2–2.5 小時</li>
+      <li>12:30 穿過井之頭公園，可以划船</li>
+      <li>13:30 吉祥寺午餐、逛 Sun Road 商店街</li>
+      <li>16:30 回淺草飯店休息、換保暖衣物</li>
+      <li>18:00 前後 屋形船登船（約 2.5 小時），船上吃晚餐</li>
+      <li>20:30 下船，步行回飯店</li></ul></div>
+    <div class="block"><h4>屋形船（乘合船）</h4>
+      <ul><li>掛滿紅燈籠的傳統和船，榻榻米席地而坐，最有《神隱少女》渡船的氣氛</li>
+      <li>航線：隅田川 → 晴空塔、彩虹大橋、台場夜景</li>
+      <li>淺草出發：船宿あみ清（雷門附近）、屋形船あみ達</li>
+      <li>乘合船大人約 ¥13,000 起；小學生約 ¥5,500–7,800，依船家與方案</li>
+      <li>含晚餐；冬季部分船家有壽喜燒鍋</li>
+      <li>乘合船不是天天開，先查 2/3 有沒有班次再預約</li></ul></div>
+    <div class="block"><h4>用餐</h4>
+      <ul><li>午餐：吉祥寺 SATOU 炸肉餅外帶、公園旁「いせや」串燒，或館內麥稈帽咖啡館</li>
+      <li>晚餐：屋形船上</li></ul></div>
+    <p class="note">加碼選項：江戶東京建築園（小金井公園內）有一棟錢湯，據說是油屋的靈感來源之一。冬季約 16:30 閉園，要去的話午餐後直接過去，屋形船可能就要選較晚的班次。</p>
+  </article>
+
+  <article class="day" id="d0204">
+    <p class="date">2/4（四）</p>
+    <h2>淺草雷門、晴空塔，晚上移動到羽田</h2>
+    <div class="block"><h4>行程</h4>
+      <ul><li>上午：先退房寄放行李 → 雷門 → 仲見世通 → 淺草寺</li>
+      <li>13:30 抹茶時間：壽々喜園 × ななや（淺草寺北側，步行約 7–9 分鐘）</li>
+      <li>下午：淺草線一站到押上，晴空塔、墨田水族館</li>
+      <li>傍晚：回飯店拿行李，淺草線直達羽田，約 45 分鐘</li></ul></div>
+    <div class="block"><h4>用餐</h4>
+      <ul><li>午餐：大黑家天丼，或淺草今半壽喜燒（要預約）</li>
+      <li>晚餐：T3「江戶小路」</li></ul></div>
+    <div class="block"><h4>抹茶：壽々喜園 × ななや</h4>
+      <ul><li>抹茶義式冰淇淋濃度分 No.1–No.7，No.7 號稱世界最濃</li>
+      <li>小孩建議選 No.1–3（比較甜），大人挑戰 No.7，可點雙球比較</li>
+      <li>2 樓有內用座位，也有焙茶、玄米茶口味</li>
+      <li>營業約 11:00–17:00，不定休，常大排長龍，出發前查官方 SNS</li>
+      <li>備案：淺草茶屋たばねのし的四種濃度抹茶糰子</li></ul></div>
+    <p class="note">入住羽田 T3 直結飯店，凌晨走路就能到報到櫃台。</p>
+  </article>
+
+  <article class="day" id="d0205">
+    <p class="date">2/5（五）除夕</p>
+    <h2>回台灣</h2>
+    <div class="block"><h4>時間</h4>
+      <ul><li>02:30 從飯店走到虎航報到櫃台</li>
+      <li>05:00 起飛，07:55 抵達桃園</li></ul></div>
+    <p class="note">廉航約在起飛前 50–60 分鐘關閉報到，不能遲到。</p>
+  </article>
+
+</div>
+</main>
+
+<section class="info" id="backup">
+  <h2>雨天或強風備案：三麗鷗彩虹樂園</h2>
+  <div class="block"><h4>什麼時候用</h4>
+    <ul><li>1/31 強風使水陸兩用巴士停駛，或台場天氣太差時</li>
+    <li>1/30 大雪影響輕井澤新幹線時，和 1/31 對調後使用</li></ul></div>
+  <div class="block"><h4>重點</h4>
+    <ul><li>全室內樂園，不怕天氣；京王多摩中心站步行約 5 分鐘</li>
+    <li>從淺草約 1 小時 15 分；從多摩中心到舞濱約 1.5 小時，1/31 要預留時間去迪士尼飯店</li>
+    <li>營業時間和休館日不固定，通常 17:00 左右關門，前一天先查官網</li>
+    <li>建議先上網買票，也可考慮 PUROPASS 少排隊</li></ul></div>
+</section>
+
+<section class="info" id="hotels">
+  <h2>住宿安排（大行李箱只搬 2 次）</h2>
+  <div class="tablewrap"><table>
+    <thead><tr><th>日期</th><th>住宿</th><th>房間</th></tr></thead>
+    <tbody>
+      <tr><td>1/28–1/31（3 晚）</td><td>淺草飯店 A</td><td>2 間 4 人房</td></tr>
+      <tr><td>1/31（1 晚）</td><td>東京迪士尼度假區玩具總動員飯店（推薦）</td><td>2 間，只帶過夜包</td></tr>
+      <tr><td>2/1–2/4（3 晚）</td><td>回到同一間淺草飯店 A</td><td>大行李寄放在這裡</td></tr>
+      <tr><td>2/4（1 晚）</td><td>羽田 T3 直結飯店</td><td>2 間</td></tr>
+    </tbody>
+  </table></div>
+  <div class="block"><h4>淺草飯店挑選重點</h4>
+    <ul><li>淺草站步行 5 分鐘內，都營淺草線可直通羽田</li>
+    <li>要有 4 人房或家庭房；公寓式飯店（有洗衣機）很適合 8 天行程</li>
+    <li>訂房時先詢問：1/31 退房後可否寄放行李到 2/1 晚上</li>
+    <li>不想整理行李的話，也可以 1/31 不退房，多付一晚</li></ul></div>
+  <div class="block"><h4>迪士尼飯店選擇</h4>
+    <ul><li>玩具總動員飯店：價格相對親民，國小以下小孩每張床可添睡 1 位</li>
+    <li>MiraCosta（園區內）：最方便，但價格高很多，而且很難訂</li>
+    <li>預約開放：住宿日 4 個月前同日 11:00；1/31 因為沒有 9/31，改為 10/1 11:00（台灣 10:00）</li></ul></div>
+  <div class="block"><h4>羽田 T3 飯店</h4>
+    <ul><li>Villa Fontaine Grand 羽田機場、The Royal Park Hotel 東京羽田，都能走路到報到櫃台</li></ul></div>
+</section>
+
+<section class="info" id="budget">
+  <h2>預算估算（8 人，日圓）</h2>
+  <div class="tablewrap"><table>
+    <thead><tr><th>項目</th><th>估算</th></tr></thead>
+    <tbody>
+      <tr><td>機票（樂桃去、虎航回）＋回程行李</td><td>TWD 134,100 ＋ 行李 TWD 5,800 ＝ 約 TWD 139,940</td></tr>
+      <tr><td>淺草飯店 6 晚 × 2 間</td><td>¥240,000–360,000</td></tr>
+      <tr><td>玩具總動員飯店 1 晚 × 2 間</td><td>¥94,000–140,000</td></tr>
+      <tr><td>羽田 T3 飯店 1 晚 × 2 間</td><td>¥50,000–80,000</td></tr>
+      <tr><td>哈利波特影城</td><td>¥42,400–46,800</td></tr>
+      <tr><td>迪士尼海洋 1 日券</td><td>¥50,000–66,000（依日期浮動），DPA 另計</td></tr>
+      <tr><td>吉卜力美術館</td><td>約 ¥5,600</td></tr>
+      <tr><td>輕井澤新幹線來回</td><td>約 ¥70,000</td></tr>
+      <tr><td>星野溫泉 蜻蜓之湯</td><td>¥8,600</td></tr>
+      <tr><td>水陸兩用巴士</td><td>約 ¥17,000（依路線）</td></tr>
+      <tr><td>SKY BUS 夜景路線</td><td>¥15,600</td></tr>
+      <tr><td>屋形船（含晚餐）</td><td>¥75,000–90,000</td></tr>
+      <tr><td>挽肉と米</td><td>¥15,840</td></tr>
+      <tr><td>壽々喜園抹茶冰淇淋</td><td>約 ¥5,000</td></tr>
+      <tr><td>1/29 凌晨接送（計程車或廂型車）</td><td>¥24,000–36,000</td></tr>
+      <tr><td>市區電車、巴士</td><td>約 ¥30,000</td></tr>
+      <tr><td>其他餐費（8 人 × 7 天）</td><td>¥210,000–280,000</td></tr>
+      <tr><th>日圓合計</th><th>約 ¥961,000–1,266,000</th></tr>
+      <tr><th>每家（÷2）</th><th>約 ¥481,000–633,000 ＋ 機票行李約 TWD 69,970</th></tr>
+    </tbody>
+  </table></div>
+  <p class="note">住宿和餐費是粗估，實際依訂到的飯店而定；伴手禮、購物不含在內。</p>
+</section>
+
+<section class="info" id="booking">
+  <h2>訂票清單</h2>
+  <div class="tablewrap"><table>
+    <thead><tr><th>項目</th><th>開賣時間／注意</th></tr></thead>
+    <tbody>
+      <tr><td>吉卜力美術館 2/3</td><td>前一個月 10 號開賣（1/10），很難搶；預約 10:00 入場</td></tr>
+      <tr><td>挽肉と米 澀谷 2/2 11:00</td><td>1/1 開放 WEB 記帳（TableCheck），先付定食費；8 人分兩組各 4 人；7 天前起取消要收費</td></tr>
+      <tr><td>哈利波特影城 1/29</td><td>約 2–3 個月前開賣，不能退票；選 13:00 後場次</td></tr>
+      <tr><td>迪士尼海洋 2/1</td><td>約 2 個月前開賣；DPA 當天在 App 購買</td></tr>
+      <tr><td>輕井澤新幹線 1/30</td><td>8 人指定席提前劃位</td></tr>
+      <tr><td>屋形船 2/3 晚上</td><td>先確認乘合船當天有開，再向船家預約（8 人）</td></tr>
+      <tr><td>SKY BUS 夜景 2/2</td><td>30 天前開放網路預約（約 1/3）</td></tr>
+      <tr><td>水陸兩用巴士 1/31</td><td>官網預約，確認班次和出發地點</td></tr>
+      <tr><td>機票＋托運行李</td><td>兩家各自在樂桃、虎航官網下訂；去程不托運，回程每家 2 份 25 公斤，訂票時一起買</td></tr>
+      <tr><td>1/29 凌晨接送</td><td>預約ミニバン，或準備 2–3 台計程車</td></tr>
+      <tr><td>玩具總動員飯店 1/31</td><td><b>2026/10/1 11:00（台灣 10:00）開放預約</b>，一次最多訂 3 間</td></tr>
+      <tr><td>淺草飯店</td><td>1/28–1/31、2/1–2/4 同一間；1/28 晚開始入住，確認可寄放行李</td></tr>
+      <tr><td>羽田 T3 飯店</td><td>2/4 一晚</td></tr>
+    </tbody>
+  </table></div>
+  <h2>交通小提醒</h2>
+  <div class="tablewrap"><table>
+    <tbody>
+      <tr><td>小孩車票</td><td>6–11 歲半價，可買兒童 Welcome Suica</td></tr>
+      <tr><td>計程車</td><td>一台最多 4 人，8 人要叫 2 台</td></tr>
+      <tr><td>尖峰時段</td><td>避開早上和傍晚的通勤時間，尤其中央線</td></tr>
+    </tbody>
+  </table></div>
+</section>
+
+<footer>營業時間、票價、班次可能變動，出發前請再到各官網確認。</footer>
+
+</body>
+</html>
