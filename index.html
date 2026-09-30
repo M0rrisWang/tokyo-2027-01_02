@@ -70,6 +70,29 @@
   th,td{text-align:left;padding:10px 12px;border-bottom:1px solid var(--ice);vertical-align:top}
   th{background:var(--ice);font-weight:700}
   .tablewrap{overflow-x:auto}
+  .routemap{margin:4px 0 12px;background:var(--white);border:1px solid var(--ice);border-radius:12px;padding:10px 8px 10px}
+  .routemap > svg{display:block;width:100%;max-width:460px;height:auto;margin:0 auto;overflow:visible}
+  .rm-base{fill:none;stroke:var(--ice);stroke-width:5;stroke-linecap:round}
+  .rm-prog{fill:none;stroke:var(--line);stroke-width:5;stroke-linecap:round}
+  .rm-ibg{fill:var(--white);stroke:var(--ice);stroke-width:1.5}
+  .rm-icon{font-size:12px;text-anchor:middle;dominant-baseline:central}
+  .rm-st circle{fill:var(--white);stroke:var(--slate);stroke-width:3;transition:r .2s}
+  .rm-st.on circle{stroke:var(--line)}
+  .rm-st.cur circle{r:9;fill:var(--line)}
+  .rm-name{font-size:12.5px;font-weight:700;fill:var(--ink);text-anchor:middle}
+  .rm-time{font-size:11px;fill:var(--slate);text-anchor:middle}
+  .rm-dot{fill:var(--line);stroke:var(--white);stroke-width:3}
+  .rm-bar{display:flex;align-items:center;gap:10px;padding:6px 6px 0;flex-wrap:wrap}
+  .rm-btn{font:inherit;font-size:14px;font-weight:700;color:var(--white);background:var(--line);border:0;border-radius:999px;padding:6px 14px;cursor:pointer}
+  .rm-cap{font-size:14px;color:var(--slate);flex:1;min-width:0}
+  .rm-tabs{display:flex;gap:6px;padding:0 4px 8px}
+  .rm-tab{font:inherit;font-size:13px;padding:5px 12px;border-radius:999px;border:1px solid var(--ice);background:transparent;color:var(--slate);cursor:pointer}
+  .rm-tab.active{background:var(--ink);color:var(--snow);border-color:var(--ink)}
+  .rm-map{height:320px;border-radius:10px;overflow:hidden;z-index:0}
+  .rm-mapnote{font-size:12px;color:var(--slate);padding:6px 6px 0}
+  .rm-num span{display:inline-block;transform:translate(-50%,-50%);min-width:22px;height:22px;padding:0 5px;border-radius:11px;background:#fff;border:3px solid #5B6B82;color:#1E2A44;font:700 11px/16px "Noto Sans TC",system-ui,sans-serif;text-align:center;white-space:nowrap;box-sizing:border-box}
+  .rm-num.on span{border-color:#C73E2E;background:#C73E2E;color:#fff}
+  .leaflet-popup-content{font-family:"Noto Sans TC",system-ui,sans-serif;font-size:13px}
   footer{text-align:center;color:var(--slate);font-size:13px;padding:0 22px 40px}
 </style>
 </head>
@@ -104,17 +127,17 @@
       <thead><tr><th>家庭</th><th>狀態</th><th>金額</th></tr></thead>
       <tbody>
         <tr><td>Morris 家（2 大 2 小）</td><td>✅ 已訂（Agoda）</td><td>NT$71,626（含去程 20kg×4、回程 25kg×2）</td></tr>
-        <tr><td>Hill 家（2 大 2 小）</td><td>⏳ 待訂</td><td>預估約 NT$71,000–72,000，建議選同樣方案</td></tr>
+        <tr><td>Hill 家（2 大 2 小）</td><td>✅ 已訂</td><td>NT$75,241</td></tr>
       </tbody>
     </table></div></div>
   <div class="block"><h4>行李</h4>
     <ul><li>Morris 家的 Agoda 訂單：去程樂桃每人含 20 公斤托運＋7 公斤手提</li>
     <li>回程虎航每人手提 10 公斤，另加購 2 份 25 公斤托運；同訂位代號可合併計重</li>
-    <li>Hill 家建議訂同樣方案，行李配置相同</li>
+    <li>Hill 家同樣是樂桃去、虎航回（行李內容以各自訂單為準）</li>
     <li>行李要在訂票時一起買，現場加購和超重（約 NT$500／公斤）貴很多</li></ul></div>
   <div class="block"><h4>機票＋行李合計</h4>
-    <ul><li>Morris 家實付 NT$71,626；Hill 家預估 NT$71,000–72,000</li>
-    <li>兩家合計約 NT$142,600–143,600</li></ul></div>
+    <ul><li>Morris 家實付 NT$71,626；Hill 家實付 NT$75,241</li>
+    <li>兩家合計 NT$146,867</li></ul></div>
 </section>
 
 <nav aria-label="日期">
@@ -142,6 +165,7 @@
   <article class="day" id="d0128">
     <p class="date">1/28（四）深夜 → 1/29 凌晨</p>
     <h2>抵達羽田，前往淺草</h2>
+    <div class="routemap" data-route="d0128"></div>
     <div class="block"><h4>交通</h4>
       <ul><li>00:50 抵達 T3，出關約 1:30–2:00，此時電車已收班</li>
       <li>預約ミニバン（廂型車），或 2–3 台計程車到淺草，約 30 分鐘</li>
@@ -153,6 +177,7 @@
   <article class="day" id="d0129">
     <p class="date">1/29（五）</p>
     <h2>哈利波特影城</h2>
+    <div class="routemap" data-route="d0129"></div>
     <div class="block"><h4>交通</h4>
       <ul><li>銀座線到上野 → JR 山手線到池袋 → 西武池袋線到豐島園，約 45–50 分鐘</li>
       <li>豐島園站步行約 2 分鐘到影城</li></ul></div>
@@ -166,6 +191,7 @@
   <article class="day" id="d0130">
     <p class="date">1/30（六）</p>
     <h2>輕井澤：玩雪、星野溫泉蜻蜓之湯、榆樹街小鎮</h2>
+    <div class="routemap" data-route="d0130"></div>
     <div class="block"><h4>交通</h4>
       <ul><li>上野搭北陸新幹線到輕井澤，約 1 小時，8 人指定席要提前劃位</li>
       <li>輕井澤站北口搭西武觀光巴士到「星野溫泉 蜻蜓之湯」，約 20 分鐘</li>
@@ -192,6 +218,7 @@
   <article class="day" id="d0131">
     <p class="date">1/31（日）</p>
     <h2>台場 → 入住迪士尼飯店</h2>
+    <div class="routemap" data-route="d0131"></div>
     <div class="block"><h4>行李</h4>
       <ul><li>大行李箱留在淺草飯店寄放，只帶一晚的過夜包</li></ul></div>
     <div class="block"><h4>交通</h4>
@@ -211,6 +238,7 @@
   <article class="day" id="d0201">
     <p class="date">2/1（一）</p>
     <h2>東京迪士尼海洋</h2>
+    <div class="routemap" data-route="d0201"></div>
     <div class="block"><h4>交通</h4>
       <ul><li>從迪士尼飯店直接入園，不用一早從淺草出發</li>
       <li>晚上：舞濱 → 京葉線到東京站，轉車回淺草飯店拿回寄放的行李，約 50–60 分鐘</li></ul></div>
@@ -223,6 +251,7 @@
   <article class="day" id="d0202">
     <p class="date">2/2（二）</p>
     <h2>澀谷：挽肉と米、任天堂、寶可夢中心 → 夜遊觀光巴士</h2>
+    <div class="routemap" data-route="d0202"></div>
     <div class="block"><h4>交通</h4>
       <ul><li>淺草搭銀座線直達澀谷，約 30 分鐘，不用轉車</li></ul></div>
     <div class="block"><h4>時間表</h4>
@@ -251,6 +280,7 @@
   <article class="day" id="d0203">
     <p class="date">2/3（三）</p>
     <h2>宮崎駿主題日：吉卜力美術館 → 吉祥寺 → 淺草屋形船</h2>
+    <div class="routemap" data-route="d0203"></div>
     <div class="block"><h4>交通</h4>
       <ul><li>淺草 → 神田 → JR 中央線快速到三鷹，再搭巴士或步行，約 50–60 分鐘</li>
       <li>美術館穿過井之頭公園步行約 15 分鐘到吉祥寺</li>
@@ -278,6 +308,7 @@
   <article class="day" id="d0204">
     <p class="date">2/4（四）</p>
     <h2>淺草雷門、晴空塔，晚上移動到羽田</h2>
+    <div class="routemap" data-route="d0204"></div>
     <div class="block"><h4>行程</h4>
       <ul><li>上午：先退房寄放行李 → 雷門 → 仲見世通 → 淺草寺</li>
       <li>13:30 抹茶時間：壽々喜園 × ななや（淺草寺北側，步行約 7–9 分鐘）</li>
@@ -298,6 +329,7 @@
   <article class="day" id="d0205">
     <p class="date">2/5（五）除夕</p>
     <h2>回台灣</h2>
+    <div class="routemap" data-route="d0205"></div>
     <div class="block"><h4>時間</h4>
       <ul><li>02:30 從飯店走到虎航報到櫃台</li>
       <li>05:00 起飛，07:55 抵達桃園</li></ul></div>
@@ -348,7 +380,7 @@
   <div class="tablewrap"><table>
     <thead><tr><th>項目</th><th>估算</th></tr></thead>
     <tbody>
-      <tr><td>機票＋托運行李（兩家）</td><td>Morris 家 NT$71,626（已付）＋ Hill 家預估 NT$71,000–72,000 ＝ 約 TWD 142,600–143,600</td></tr>
+      <tr><td>機票＋托運行李（兩家）</td><td>Morris 家 NT$71,626 ＋ Hill 家 NT$75,241 ＝ TWD 146,867（皆已付）</td></tr>
       <tr><td>淺草飯店 6 晚 × 2 間</td><td>¥240,000–360,000</td></tr>
       <tr><td>玩具總動員飯店 1 晚 × 2 間</td><td>¥94,000–140,000</td></tr>
       <tr><td>羽田 T3 飯店 1 晚 × 2 間</td><td>¥50,000–80,000</td></tr>
@@ -366,7 +398,7 @@
       <tr><td>市區電車、巴士</td><td>約 ¥30,000</td></tr>
       <tr><td>其他餐費（8 人 × 7 天）</td><td>¥210,000–280,000</td></tr>
       <tr><th>日圓合計</th><th>約 ¥961,000–1,266,000</th></tr>
-      <tr><th>每家（÷2）</th><th>約 ¥481,000–633,000 ＋ 機票行李約 TWD 71,000–72,000</th></tr>
+      <tr><th>每家（÷2）</th><th>約 ¥481,000–633,000 ＋ 各自機票（Morris NT$71,626／Hill NT$75,241）</th></tr>
     </tbody>
   </table></div>
   <p class="note">住宿和餐費是粗估，實際依訂到的飯店而定；伴手禮、購物不含在內。</p>
@@ -385,7 +417,7 @@
       <tr><td>屋形船 2/3 晚上</td><td>先確認乘合船當天有開，再向船家預約（8 人）</td></tr>
       <tr><td>SKY BUS 夜景 2/2</td><td>30 天前開放網路預約（約 1/3）</td></tr>
       <tr><td>水陸兩用巴士 1/31</td><td>官網預約，確認班次和出發地點</td></tr>
-      <tr><td>機票＋托運行李</td><td>✅ Morris 家已訂（Agoda）；⏳ Hill 家待訂，選同方案（去程 20kg×4、回程 25kg×2）</td></tr>
+      <tr><td>機票＋托運行李</td><td>✅ 兩家都已訂（Morris 家 Agoda、Hill 家各自訂位）</td></tr>
       <tr><td>1/29 凌晨接送</td><td>預約ミニバン，或準備 2–3 台計程車</td></tr>
       <tr><td>玩具總動員飯店 1/31</td><td><b>2026/10/1 11:00（台灣 10:00）開放預約</b>，一次最多訂 3 間</td></tr>
       <tr><td>淺草飯店</td><td>1/28–1/31、2/1–2/4 同一間；1/28 晚開始入住，確認可寄放行李</td></tr>
@@ -403,6 +435,177 @@
 </section>
 
 <footer>營業時間、票價、班次可能變動，出發前請再到各官網確認。</footer>
+
+<script>
+(function(){
+const ROUTES = {
+  d0128: {s:[["羽田 T3","00:50"],["淺草飯店","約 02:00"]],
+          m:[["🚕","計程車／廂型車，約 30 分鐘"]]},
+  d0129: {s:[["淺草","11:30"],["上野",""],["池袋",""],["豐島園",""],["哈利波特影城","13:00"],["池袋","晚餐"],["淺草",""]],
+          m:[["🚇","銀座線"],["🚃","JR 山手線"],["🚃","西武池袋線"],["🚶","步行約 2 分鐘"],["🚃","西武池袋線"],["🚃","JR 山手線＋銀座線"]]},
+  d0130: {s:[["淺草","08:00"],["上野","08:30"],["輕井澤站","09:30"],["王子購物廣場","09:30"],["蜻蜓之湯","14:00"],["榆樹街小鎮","15:30"],["輕井澤站","18:30"],["上野",""],["淺草",""]],
+          m:[["🚇","銀座線"],["🚄","北陸新幹線，約 1 小時"],["🚶","南口步行"],["🚌","北口搭西武觀光巴士，約 20 分鐘"],["🚶","步行"],["🚌","西武觀光巴士"],["🚄","北陸新幹線"],["🚇","銀座線"]]},
+  d0131: {s:[["淺草","09:30"],["新橋",""],["台場海濱公園",""],["DiverCity",""],["東京電訊站","15:00"],["新木場",""],["舞濱",""],["迪士尼飯店","16:00"]],
+          m:[["🚇","銀座線"],["🚝","百合海鷗號（坐第一節車廂）"],["🚶","步行，水陸兩用巴士"],["🚶","步行"],["🚃","臨海線"],["🚃","京葉線"],["🚝","迪士尼度假區線"]]},
+  d0201: {s:[["迪士尼飯店","開園前"],["迪士尼海洋","全天"],["舞濱","晚上"],["東京站",""],["淺草飯店",""]],
+          m:[["🚶","Happy Entry 提早入園"],["🚝","迪士尼度假區線"],["🚃","京葉線"],["🚇","JR＋銀座線，拿回行李"]]},
+  d0202: {s:[["淺草","10:00"],["挽肉と米","11:00"],["澀谷 PARCO","12:30"],["十字路口",""],["東京站","17:00"],["SKY BUS","18:00"],["東京站","19:00"],["淺草",""]],
+          m:[["🚇","銀座線直達，約 30 分鐘"],["🚶","步行"],["🚶","步行"],["🚃","JR 山手線"],["🚶","丸之內南口步行 3 分鐘"],["🚌","夜景路線，約 50 分鐘"],["🚇","JR＋銀座線"]]},
+  d0203: {s:[["淺草","08:40"],["神田",""],["三鷹",""],["吉卜力美術館","10:00"],["井之頭公園","12:30"],["吉祥寺","13:30"],["淺草飯店","16:30"],["屋形船碼頭","18:00"],["彩虹大橋夜景",""],["淺草飯店","20:30"]],
+          m:[["🚇","銀座線"],["🚃","JR 中央線快速"],["🚌","社區巴士"],["🚶","穿過公園"],["🚶","步行約 15 分鐘"],["🚃","中央線＋銀座線"],["🚶","步行"],["⛴️","屋形船，隅田川夜遊"],["⛴️","回到碼頭，步行回飯店"]]},
+  d0204: {s:[["淺草飯店","09:30"],["雷門",""],["淺草寺",""],["壽々喜園","13:30"],["晴空塔",""],["淺草飯店","拿行李"],["羽田 T3","晚上"]],
+          m:[["🚶","步行"],["🚶","仲見世通"],["🚶","步行約 7–9 分鐘"],["🚇","淺草線一站到押上"],["🚇","淺草線"],["🚇","淺草線直通羽田，約 45 分鐘"]]},
+  d0205: {s:[["羽田飯店","02:30"],["虎航櫃台",""],["登機","05:00"],["桃園機場","07:55"]],
+          m:[["🚶","步行到報到櫃台"],["🛂","出境、安檢"],["✈️","IT217"]]}
+};
+const C = {"羽田 T3":[35.5443,139.7686],"淺草":[35.7106,139.7966],"淺草飯店":[35.7106,139.7966],"上野":[35.7138,139.7773],"池袋":[35.7295,139.7109],"豐島園":[35.7424,139.6474],"哈利波特影城":[35.7447,139.6483],"輕井澤站":[36.3428,138.6352],"王子購物廣場":[36.3390,138.6328],"蜻蜓之湯":[36.3641,138.5944],"榆樹街小鎮":[36.3628,138.5967],"新橋":[35.6663,139.7583],"台場海濱公園":[35.6297,139.7751],"DiverCity":[35.6250,139.7756],"東京電訊站":[35.6272,139.7784],"新木場":[35.6457,139.8270],"舞濱":[35.6363,139.8834],"迪士尼飯店":[35.6320,139.8894],"迪士尼海洋":[35.6267,139.8851],"東京站":[35.6812,139.7671],"挽肉と米":[35.6609,139.6980],"澀谷 PARCO":[35.6620,139.6988],"十字路口":[35.6595,139.7005],"SKY BUS":[35.6795,139.7640],"神田":[35.6917,139.7709],"三鷹":[35.7027,139.5607],"吉卜力美術館":[35.6962,139.5704],"井之頭公園":[35.6997,139.5738],"吉祥寺":[35.7033,139.5797],"屋形船碼頭":[35.7085,139.7980],"彩虹大橋夜景":[35.6365,139.7631],"雷門":[35.7111,139.7964],"淺草寺":[35.7148,139.7967],"壽々喜園":[35.7178,139.7952],"晴空塔":[35.7101,139.8107],"羽田飯店":[35.5445,139.7690],"虎航櫃台":[35.5443,139.7686],"登機":[35.5440,139.7680],"桃園機場":[25.0797,121.2342]};
+const NS="http://www.w3.org/2000/svg", XS=[70,180,290], TOP=34, ROW=100, SEG_MS=1100;
+const reduce = window.matchMedia && matchMedia('(prefers-reduced-motion: reduce)').matches;
+const dark = () => window.matchMedia && matchMedia('(prefers-color-scheme: dark)').matches;
+function el(tag, attrs, parent){ const e=document.createElementNS(NS,tag); for(const k in attrs) e.setAttribute(k,attrs[k]); if(parent) parent.appendChild(e); return e; }
+function pos(i){ const row=Math.floor(i/3), c=i%3; return {x: row%2===0 ? XS[c] : XS[2-c], y: TOP+row*ROW}; }
+function segPath(a,b){
+  if(a.y===b.y) return 'M'+a.x+' '+a.y+' H'+b.x;
+  if(a.x===290) return 'M290 '+a.y+' H334 A14 14 0 0 1 348 '+(a.y+14)+' V'+(b.y-14)+' A14 14 0 0 1 334 '+b.y+' H290';
+  return 'M70 '+a.y+' H26 A14 14 0 0 0 12 '+(a.y+14)+' V'+(b.y-14)+' A14 14 0 0 0 26 '+b.y+' H70';
+}
+let leafletP=null;
+function loadLeaflet(){
+  if(window.L) return Promise.resolve();
+  if(leafletP) return leafletP;
+  leafletP = new Promise((res,rej)=>{
+    const css=document.createElement('link'); css.rel='stylesheet';
+    css.href='https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.css'; document.head.appendChild(css);
+    const js=document.createElement('script'); js.src='https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.js';
+    js.onload=()=>res(); js.onerror=()=>{ leafletP=null; rej(new Error('leaflet')); }; document.head.appendChild(js);
+  });
+  return leafletP;
+}
+function build(box){
+  const r = ROUTES[box.dataset.route]; if(!r) return;
+  const n = r.s.length, rows = Math.ceil(n/3), H = TOP+(rows-1)*ROW+56;
+  // tabs
+  const tabs=document.createElement('div'); tabs.className='rm-tabs'; tabs.setAttribute('role','tablist');
+  const tSvg=document.createElement('button'), tMap=document.createElement('button');
+  [[tSvg,'🚉 路線圖'],[tMap,'🗺️ 實際地圖']].forEach(([b,t])=>{ b.type='button'; b.className='rm-tab'; b.setAttribute('role','tab'); b.textContent=t; tabs.appendChild(b); });
+  tSvg.classList.add('active'); tSvg.setAttribute('aria-selected','true'); tMap.setAttribute('aria-selected','false');
+  // svg view
+  const svg = el('svg',{viewBox:'0 0 360 '+H,role:'img','aria-label':'路線示意：'+r.s.map(s=>s[0]).join(' → ')});
+  const gBase=el('g',{},svg), gProg=el('g',{},svg), gIcon=el('g',{},svg), gSt=el('g',{},svg);
+  const base=[], prog=[], lens=[];
+  for(let i=0;i<n-1;i++){
+    const d = segPath(pos(i),pos(i+1));
+    base.push(el('path',{d,class:'rm-base'},gBase));
+    prog.push(el('path',{d,class:'rm-prog'},gProg));
+  }
+  const stations = r.s.map((s,i)=>{
+    const p=pos(i), g=el('g',{class:'rm-st'},gSt);
+    el('circle',{cx:p.x,cy:p.y,r:7},g);
+    const t=el('text',{x:p.x,y:p.y+24,class:'rm-name'},g); t.textContent=s[0];
+    if(s[1]){ const u=el('text',{x:p.x,y:p.y+39,class:'rm-time'},g); u.textContent=s[1]; }
+    return g;
+  });
+  const dot = el('circle',{r:6,class:'rm-dot',cx:pos(0).x,cy:pos(0).y},svg);
+  // map view
+  const mapBox=document.createElement('div'); mapBox.className='rm-map'; mapBox.hidden=true;
+  const mapNote=document.createElement('p'); mapNote.className='rm-mapnote'; mapNote.textContent='地圖上的路線是站點之間的直線示意，不是實際行車路徑。'; mapNote.hidden=true;
+  // bar
+  const bar = document.createElement('div'); bar.className='rm-bar';
+  const btn = document.createElement('button'); btn.type='button'; btn.className='rm-btn'; btn.textContent='▶ 播放路線';
+  const cap = document.createElement('span'); cap.className='rm-cap'; cap.setAttribute('aria-live','polite');
+  cap.textContent = r.s[0][0]+' 出發，共 '+n+' 站';
+  bar.append(btn,cap); box.append(tabs,svg,mapBox,mapNote,bar);
+  base.forEach((b,i)=>{
+    lens[i]=b.getTotalLength();
+    prog[i].style.strokeDasharray=lens[i]; prog[i].style.strokeDashoffset=lens[i];
+    const m=b.getPointAtLength(lens[i]/2);
+    el('circle',{cx:m.x,cy:m.y,r:11,class:'rm-ibg'},gIcon);
+    const tx=el('text',{x:m.x,y:m.y+1,class:'rm-icon'},gIcon); tx.textContent=r.m[i][0];
+  });
+  const LL = r.s.map(s=>C[s[0]] || C['淺草']);
+  let view='svg', raf=null, playedSvg=false, playedMap=false, map=null, mMarker=null, mProg=null, mSt=[];
+  function caption(t){
+    const k=Math.min(Math.floor(t), n-2);
+    if(t>=n-1) cap.textContent='✓ 抵達 '+r.s[n-1][0]+'，共 '+n+' 站';
+    else { const m=r.m[k]; cap.textContent=m[0]+' '+m[1]+'｜'+r.s[k][0]+' → '+r.s[k+1][0]; }
+  }
+  function renderSvg(t){
+    const k=Math.min(Math.floor(t), n-2), f=t-k;
+    prog.forEach((p,i)=>{ p.style.strokeDashoffset = i<k ? 0 : (i===k ? lens[i]*(1-f) : lens[i]); });
+    const pt = base[k].getPointAtLength(lens[k]*Math.min(f,1));
+    dot.setAttribute('cx',pt.x); dot.setAttribute('cy',pt.y);
+    stations.forEach((s,i)=>{ s.classList.toggle('on', i<=k || (i===k+1 && f>=1)); s.classList.toggle('cur', i===k+1 && f>=1); });
+    caption(t);
+  }
+  function renderMap(t){
+    if(!map) return;
+    const k=Math.min(Math.floor(t), n-2), f=Math.min(t-k,1);
+    const a=LL[k], b=LL[k+1], p=[a[0]+(b[0]-a[0])*f, a[1]+(b[1]-a[1])*f];
+    mMarker.setLatLng(p);
+    mProg.setLatLngs(LL.slice(0,k+1).concat([p]));
+    mSt.forEach(m=>{ const e=m.getElement(); if(!e) return; const on=m._idx.some(i=> i<=k || (i===k+1 && f>=1)); e.classList.toggle('on',on); });
+    caption(t);
+  }
+  function css(v){ return getComputedStyle(document.documentElement).getPropertyValue(v).trim() || '#C73E2E'; }
+  function play(){
+    cancelAnimationFrame(raf); btn.textContent='↻ 重播';
+    const render = view==='svg' ? renderSvg : renderMap;
+    if(view==='svg') playedSvg=true; else playedMap=true;
+    if(reduce){ render(n-1); return; }
+    const start=performance.now(), total=(n-1)*SEG_MS;
+    (function step(now){
+      const t=Math.max(0, Math.min((now-start)/SEG_MS, n-1)); render(t);
+      if(now-start<total) raf=requestAnimationFrame(step);
+    })(start);
+  }
+  function initMap(){
+    map = L.map(mapBox, {scrollWheelZoom:false, attributionControl:true, zoomControl:true});
+    const style = dark() ? 'dark_all' : 'light_all';
+    L.tileLayer('https://{s}.basemaps.cartocdn.com/'+style+'/{z}/{x}/{y}{r}.png', {
+      subdomains:'abcd', maxZoom:19,
+      attribution:'&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> &copy; <a href="https://carto.com/attributions">CARTO</a>'
+    }).addTo(map);
+    L.polyline(LL, {color: css('--slate'), weight:4, opacity:.35, dashArray:'6 6'}).addTo(map);
+    mProg = L.polyline([LL[0]], {color: css('--line'), weight:5}).addTo(map);
+    const groups={};
+    LL.forEach((ll,i)=>{ const key=ll.join(','); (groups[key]=groups[key]||{ll,idx:[]}).idx.push(i); });
+    mSt = Object.values(groups).map(g=>{
+      const icon=L.divIcon({className:'rm-num', html:'<span>'+g.idx.map(i=>i+1).join('·')+'</span>', iconSize:null});
+      const m=L.marker(g.ll,{icon, keyboard:false}).addTo(map);
+      m.bindPopup(g.idx.map(i=>(i+1)+'. '+r.s[i][0]+(r.s[i][1]?'（'+r.s[i][1]+'）':'')).join('<br>'));
+      m._idx=g.idx; return m;
+    });
+    mMarker = L.circleMarker(LL[0], {pane:'markerPane', radius:8, weight:3, color: css('--white'), fillColor: css('--line'), fillOpacity:1}).addTo(map);
+    map.fitBounds(L.latLngBounds(LL), {padding:[36,36], maxZoom:15});
+  }
+  function show(v){
+    view=v; cancelAnimationFrame(raf);
+    const isMap = v==='map';
+    tSvg.classList.toggle('active',!isMap); tMap.classList.toggle('active',isMap);
+    tSvg.setAttribute('aria-selected',String(!isMap)); tMap.setAttribute('aria-selected',String(isMap));
+    svg.style.display = isMap ? 'none' : ''; mapBox.hidden = !isMap; mapNote.hidden = !isMap;
+    btn.textContent = (isMap ? playedMap : playedSvg) ? '↻ 重播' : '▶ 播放路線';
+    if(isMap){
+      cap.textContent='地圖載入中…';
+      loadLeaflet().then(()=>{
+        if(!map) initMap(); else map.invalidateSize();
+        cap.textContent = r.s[0][0]+' 出發，共 '+n+' 站';
+        if(!playedMap) play();
+      }).catch(()=>{ cap.textContent='地圖載入失敗，請檢查網路後再試一次。'; });
+    } else { renderSvg(playedSvg ? n-1 : 0); if(!playedSvg){ cap.textContent = r.s[0][0]+' 出發，共 '+n+' 站'; } }
+  }
+  tSvg.addEventListener('click',()=>show('svg'));
+  tMap.addEventListener('click',()=>show('map'));
+  btn.addEventListener('click',play);
+  stations[0].classList.add('on','cur');
+  if('IntersectionObserver' in window && !reduce){
+    const io=new IntersectionObserver(es=>{ if(es[0].isIntersecting && !playedSvg && view==='svg'){ play(); io.disconnect(); } },{threshold:.6});
+    io.observe(box);
+  }
+}
+document.querySelectorAll('.routemap').forEach(build);
+})();
+</script>
 
 </body>
 </html>
