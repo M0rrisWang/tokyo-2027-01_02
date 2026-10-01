@@ -90,6 +90,12 @@
   .rm-tab.active{background:var(--ink);color:var(--snow);border-color:var(--ink)}
   .rm-map{height:320px;border-radius:10px;overflow:hidden;z-index:0}
   .rm-dark .leaflet-tile-pane{filter:invert(1) hue-rotate(180deg) brightness(.9) contrast(.9)}
+  .todo{list-style:none;padding-left:0!important}
+  .todo li{margin:6px 0}
+  .todo label{display:flex;gap:10px;align-items:flex-start;cursor:pointer}
+  .todo input{width:18px;height:18px;margin-top:4px;flex:none;accent-color:var(--line)}
+  .todo input:checked + span, .todo label:has(input:checked){color:var(--slate);text-decoration:line-through}
+  .todo-hint{font-size:13px;color:var(--slate);margin-top:6px}
   .rm-mapnote{font-size:12px;color:var(--slate);padding:6px 6px 0}
   .rm-num span{display:inline-block;transform:translate(-50%,-50%);min-width:22px;height:22px;padding:0 5px;border-radius:11px;background:#fff;border:3px solid #5B6B82;color:#1E2A44;font:700 11px/16px "Noto Sans TC",system-ui,sans-serif;text-align:center;white-space:nowrap;box-sizing:border-box}
   .rm-num.on span{border-color:#C73E2E;background:#C73E2E;color:#fff}
@@ -153,6 +159,7 @@
     <li><a href="#d0203">2/3 吉卜力＋屋形船</a></li>
     <li><a href="#d0204">2/4 淺草抹茶</a></li>
     <li><a href="#d0205">2/5 回國</a></li>
+    <li><a href="#todo">待辦清單</a></li>
     <li><a href="#backup">雨天備案</a></li>
     <li><a href="#hotels">住宿</a></li>
     <li><a href="#budget">預算</a></li>
@@ -339,6 +346,72 @@
 
 </div>
 </main>
+
+<section class="info" id="todo">
+  <h2>To Do List（10/1 整理）</h2>
+  <p class="todo-hint">勾選狀態只會存在你自己的瀏覽器裡，不會同步給其他人。</p>
+
+  <div class="block"><h4>✅ 已完成</h4>
+    <ul class="todo">
+      <li><label><input type="checkbox" checked disabled> 兩家機票：Morris 家 NT$71,626、Hill 家 NT$75,241</label></li>
+    </ul></div>
+
+  <div class="block"><h4>🔴 今天就要處理</h4>
+    <ul class="todo">
+      <li><label><input type="checkbox" data-k="toy-story"> 玩具總動員飯店 1/31（2 間）：10/1 台灣時間 10:00 開放預約，上迪士尼官網訂房</label></li>
+      <li><label><input type="checkbox" data-k="hill-bag"> Hill 家登入樂桃、虎航官網確認行李：去程每人 20 公斤、回程 25 公斤×2</label></li>
+    </ul></div>
+
+  <div class="block"><h4>🟠 10 月內完成：住宿與接送</h4>
+    <ul class="todo">
+      <li><label><input type="checkbox" data-k="asakusa"> 淺草飯店：1/28–1/31、2/1–2/4 同一間，2 間 4 人房；確認 1/31 退房後可寄放行李到 2/1 晚上</label></li>
+      <li><label><input type="checkbox" data-k="haneda"> 羽田 T3 飯店 2/4（2 間）：Villa Fontaine Grand 或 The Royal Park Hotel</label></li>
+      <li><label><input type="checkbox" data-k="pickup"> 1/29 凌晨接機：KKday 預約 8 人以上廂型車，填航班 MM860</label></li>
+    </ul></div>
+
+  <div class="block"><h4>🟡 依開賣日期搶票</h4>
+    <ul class="todo">
+      <li><label><input type="checkbox" data-k="hp"> 約 11 月起｜哈利波特影城 1/29：選 13:00 後場次，不能退票</label></li>
+      <li><label><input type="checkbox" data-k="disney"> 約 12 月初｜迪士尼海洋 2/1：8 人一起下單</label></li>
+      <li><label><input type="checkbox" data-k="shinkansen"> 約 12/30｜輕井澤新幹線 1/30：指定席 8 人坐一起</label></li>
+      <li><label><input type="checkbox" data-k="hikiniku"> <b>1/1</b>｜挽肉と米 澀谷 2/2 11:00：網路記帳，分兩組各 4 人</label></li>
+      <li><label><input type="checkbox" data-k="disney-dining"> 1/1 前後｜迪士尼餐廳優先席位：約 1 個月前開放</label></li>
+      <li><label><input type="checkbox" data-k="skybus"> 約 1/3｜SKY BUS 夜景 2/2：30 天前開放預約</label></li>
+      <li><label><input type="checkbox" data-k="ghibli"> <b>1/10</b>｜吉卜力美術館 2/3 10:00：Lawson 購票，最難搶</label></li>
+    </ul>
+    <p class="todo-hint">開賣時間為估算，實際以各官網公告為準。</p></div>
+
+  <div class="block"><h4>🟢 確認班次後預約</h4>
+    <ul class="todo">
+      <li><label><input type="checkbox" data-k="yakatabune"> 屋形船 2/3 晚上：先確認乘合船當天有開，可考慮 KKday「釣新」方案</label></li>
+      <li><label><input type="checkbox" data-k="duck"> 水陸兩用巴士 1/31：官網預約</label></li>
+      <li><label><input type="checkbox" data-k="imahan"> 淺草今半 2/4 午餐：要吃壽喜燒需事先訂位</label></li>
+    </ul></div>
+
+  <div class="block"><h4>🍱 三餐總覽</h4>
+    <div class="tablewrap"><table>
+      <thead><tr><th>日期</th><th>午餐</th><th>晚餐</th></tr></thead>
+      <tbody>
+        <tr><td>1/29</td><td>影城 Food Hall</td><td>池袋</td></tr>
+        <tr><td>1/30</td><td>王子購物廣場美食區</td><td>村民食堂／川上庵</td></tr>
+        <tr><td>1/31</td><td>AQUA CITY 拉麵國技館</td><td>IKSPIARI／迪士尼飯店</td></tr>
+        <tr><td>2/1</td><td>迪士尼 App 行動點餐</td><td>迪士尼園內</td></tr>
+        <tr><td>2/2</td><td><b>挽肉と米</b>（記帳）</td><td>東京站一番街</td></tr>
+        <tr><td>2/3</td><td>吉祥寺 SATOU／いせや</td><td><b>屋形船上</b>（含晚餐）</td></tr>
+        <tr><td>2/4</td><td>大黑家天丼／今半＋<b>壽々喜園抹茶</b></td><td>T3 江戶小路</td></tr>
+      </tbody>
+    </table></div>
+    <p class="todo-hint">早餐：飯店附近或便利商店；1/29 可先在 T3 便利商店買好。</p></div>
+
+  <div class="block"><h4>🧳 出發前準備（1 月）</h4>
+    <ul class="todo">
+      <li><label><input type="checkbox" data-k="passport"> 確認護照效期、填寫 Visit Japan Web、投保旅遊平安險</label></li>
+      <li><label><input type="checkbox" data-k="esim"> 準備 eSIM 或 Wi-Fi 分享器，換好日圓現金</label></li>
+      <li><label><input type="checkbox" data-k="suica"> 小孩的兒童 Welcome Suica，視需要買地鐵 24 小時券</label></li>
+      <li><label><input type="checkbox" data-k="warm"> 保暖衣物：帽子、手套、圍巾（SKY BUS、屋形船都用得到）</label></li>
+      <li><label><input type="checkbox" data-k="towel"> 蜻蜓之湯可自備毛巾</label></li>
+    </ul></div>
+</section>
 
 <section class="info" id="backup">
   <h2>雨天或強風備案：三麗鷗彩虹樂園</h2>
@@ -608,5 +681,14 @@ document.querySelectorAll('.routemap').forEach(build);
 })();
 </script>
 
+<script>
+(function(){
+  document.querySelectorAll('.todo input[data-k]').forEach(function(cb){
+    var key='todo:'+cb.dataset.k;
+    try{ cb.checked = localStorage.getItem(key)==='1'; }catch(e){}
+    cb.addEventListener('change',function(){ try{ localStorage.setItem(key, cb.checked?'1':'0'); }catch(e){} });
+  });
+})();
+</script>
 </body>
 </html>
