@@ -114,16 +114,59 @@
   .changelog li{margin:4px 0}
   .ver{font-weight:700;margin-bottom:4px}
   @media print{.tv-l{display:none}}
+  .toc{max-width:720px;margin:0 auto 22px;padding:0 22px;scroll-margin-top:12px}
+  .toc-card{background:var(--white);border:1px solid var(--ice);border-radius:14px;padding:14px 16px}
+  .toc h2{font-family:"Noto Serif TC",serif;font-size:20px;margin-bottom:4px}
+  .toc-h{font-size:13px;font-weight:700;color:var(--line);margin:10px 0 6px}
+  .toc-days{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:8px}
+  .toc-days a{display:block;text-decoration:none;border:1px solid var(--ice);border-radius:10px;padding:8px 10px;line-height:1.4}
+  .toc-days a b{display:block;font-size:14px}
+  .toc-days a span{font-size:13px;color:var(--slate);overflow-wrap:anywhere}
+  .toc-links{display:flex;flex-wrap:wrap;gap:6px}
+  .toc-links a{text-decoration:none;font-size:14px;padding:6px 12px;border-radius:999px;border:1px solid var(--ice)}
+  .toc-days a:hover,.toc-links a:hover{border-color:var(--line)}
+  section.info{scroll-margin-top:64px}
+  .totop{position:fixed;right:14px;bottom:calc(16px + env(safe-area-inset-bottom,0px));z-index:6;background:var(--ink);color:var(--snow);text-decoration:none;font-size:13px;font-weight:700;padding:8px 14px;border-radius:999px;box-shadow:0 2px 8px rgba(0,0,0,.2)}
+  @media print{.totop{display:none}}
   footer{text-align:center;color:var(--slate);font-size:13px;padding:0 22px 40px}
 </style>
 </head>
 <body>
 
 <header>
-  <p class="topver"><span class="tv-n">v14</span><span class="tv-d">更新於 2026 年 10 月 6 日</span><a class="tv-l" href="#changelog">看改了什麼</a></p>
+  <p class="topver"><span class="tv-n">v15</span><span class="tv-d">更新於 2026 年 10 月 6 日</span><a class="tv-l" href="#changelog">看改了什麼</a></p>
   <h1 class="title">東京冬旅<span>2027．1/28 – 2/5</span></h1>
   <p class="who">兩家人同行：<b>Morris 家</b>（Morris、Wiwi、安安、帆帆）＋ <b>Hill 家</b>（Hill、Nancy、Q寶、小波）。住宿以淺草站周邊為據點，2/4 晚上改住羽田 T3 直結飯店。兩家任何一天都可以分頭行動，預算可依各家參加項目分開計算。</p>
 </header>
+
+<div class="toc" id="toc" role="navigation" aria-label="大綱">
+  <div class="toc-card">
+    <h2>大綱</h2>
+    <p class="toc-h">每日行程</p>
+    <div class="toc-days">
+      <a href="#d0128"><b>1/28（四）</b><span>抵達羽田，前往淺草</span></a>
+      <a href="#d0129"><b>1/29（五）</b><span>哈利波特影城</span></a>
+      <a href="#d0130"><b>1/30（六）</b><span>輕井澤玩雪、泡湯</span></a>
+      <a href="#d0131"><b>1/31（日）</b><span>台場 → 迪士尼飯店</span></a>
+      <a href="#d0201"><b>2/1（一）</b><span>東京迪士尼海洋</span></a>
+      <a href="#d0202"><b>2/2（二）</b><span>澀谷、SKY BUS 夜景</span></a>
+      <a href="#d0203"><b>2/3（三）</b><span>吉卜力／動物園（分頭）</span></a>
+      <a href="#d0204"><b>2/4（四）</b><span>淺草、昊授苑、晴空塔</span></a>
+      <a href="#d0205"><b>2/5（五）</b><span>05:00 起飛回台灣</span></a>
+    </div>
+    <p class="toc-h">出發前準備</p>
+    <div class="toc-links">
+      <a href="#flights">✈️ 機票與行李</a>
+      <a href="#todo">✅ 待辦清單</a>
+      <a href="#booking">🎫 訂票清單</a>
+      <a href="#hotels">🏨 住宿安排</a>
+      <a href="#budget">💰 預算</a>
+      <a href="#backup">☔ 雨天備案</a>
+      <a href="#changelog">📝 更新紀錄</a>
+    </div>
+  </div>
+</div>
+<a class="totop" href="#toc" aria-label="回到大綱">↑ 大綱</a>
 
 <div class="flights">
   <div class="ticket">
@@ -549,6 +592,7 @@
 <section class="info" id="changelog">
   <h2>更新紀錄</h2>
   <ul class="changelog">
+    <li><b>v15　10/6</b>　頁首下方新增大綱：每日行程與出發前準備都能一鍵跳轉；右下角加上「↑ 大綱」按鈕隨時回到大綱</li>
     <li><b>v14　10/6</b>　頁首加上版本徽章和「看改了什麼」連結，徽章文字由頁尾版本自動同步；新增本更新紀錄</li>
     <li><b>v13　10/2</b>　待辦加入「12 月中確認昊授苑 2/4 網路預約」</li>
     <li><b>v12　10/2</b>　2/4 午餐改為浅草焼肉 昊授苑，路線動圖同步加入</li>
@@ -566,7 +610,7 @@
   </ul>
 </section>
 
-<footer><p class="ver">版本 v14　最後更新 2026 年 10 月 6 日</p>營業時間、票價、班次可能變動，出發前請再到各官網確認。</footer>
+<footer><p class="ver">版本 v15　最後更新 2026 年 10 月 6 日</p>營業時間、票價、班次可能變動，出發前請再到各官網確認。</footer>
 
 <script>
 (function(){
