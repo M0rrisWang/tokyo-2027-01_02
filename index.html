@@ -106,12 +106,21 @@
   .rm-num span{display:inline-block;transform:translate(-50%,-50%);min-width:22px;height:22px;padding:0 5px;border-radius:11px;background:#fff;border:3px solid #5B6B82;color:#1E2A44;font:700 11px/16px "Noto Sans TC",system-ui,sans-serif;text-align:center;white-space:nowrap;box-sizing:border-box}
   .rm-num.on span{border-color:#C73E2E;background:#C73E2E;color:#fff}
   .leaflet-popup-content{font-family:"Noto Sans TC",system-ui,sans-serif;font-size:13px}
+  .topver{display:flex;flex-wrap:wrap;align-items:center;gap:.5rem;font-size:13px;margin:0 0 14px}
+  .tv-n{font-weight:700;color:#fff;background:var(--line);border-radius:999px;padding:2px 11px;letter-spacing:.02em}
+  .tv-d{color:var(--slate)}
+  .tv-l{color:var(--line);text-decoration:underline;text-underline-offset:2px}
+  .changelog{padding-left:1.1em;font-size:14px}
+  .changelog li{margin:4px 0}
+  .ver{font-weight:700;margin-bottom:4px}
+  @media print{.tv-l{display:none}}
   footer{text-align:center;color:var(--slate);font-size:13px;padding:0 22px 40px}
 </style>
 </head>
 <body>
 
 <header>
+  <p class="topver"><span class="tv-n">v14</span><span class="tv-d">更新於 2026 年 10 月 6 日</span><a class="tv-l" href="#changelog">看改了什麼</a></p>
   <h1 class="title">東京冬旅<span>2027．1/28 – 2/5</span></h1>
   <p class="who">兩家人同行：<b>Morris 家</b>（Morris、Wiwi、安安、帆帆）＋ <b>Hill 家</b>（Hill、Nancy、Q寶、小波）。住宿以淺草站周邊為據點，2/4 晚上改住羽田 T3 直結飯店。兩家任何一天都可以分頭行動，預算可依各家參加項目分開計算。</p>
 </header>
@@ -171,6 +180,7 @@
     <li><a href="#hotels">住宿</a></li>
     <li><a href="#budget">預算</a></li>
     <li><a href="#booking">訂票清單</a></li>
+    <li><a href="#changelog">更新紀錄</a></li>
   </ul>
 </nav>
 
@@ -536,7 +546,27 @@
   </table></div>
 </section>
 
-<footer>營業時間、票價、班次可能變動，出發前請再到各官網確認。</footer>
+<section class="info" id="changelog">
+  <h2>更新紀錄</h2>
+  <ul class="changelog">
+    <li><b>v14　10/6</b>　頁首加上版本徽章和「看改了什麼」連結，徽章文字由頁尾版本自動同步；新增本更新紀錄</li>
+    <li><b>v13　10/2</b>　待辦加入「12 月中確認昊授苑 2/4 網路預約」</li>
+    <li><b>v12　10/2</b>　2/4 午餐改為浅草焼肉 昊授苑，路線動圖同步加入</li>
+    <li><b>v11　10/2</b>　2/3 改為分頭行動：Hill 家吉卜力美術館、Morris 家井之頭自然文化園，13:00 會合</li>
+    <li><b>v10　10/2</b>　移除屋形船行程，加註評估後取消的原因</li>
+    <li><b>v9　10/1</b>　加入 Hill 家機票與行李細節（已排除訂位代號等敏感資料）</li>
+    <li><b>v8　10/1</b>　套用兩家成員名稱；預算改為分家計算、可勾選參加項目</li>
+    <li><b>v7　10/1</b>　2/1 回程改經八丁堀轉乘，避開東京站長通道</li>
+    <li><b>v6　10/1</b>　預算表加上台幣；玩具總動員飯店改用實際查價</li>
+    <li><b>v5　10/1</b>　新增待辦清單</li>
+    <li><b>v4　10/1</b>　實際地圖底圖改用 OpenStreetMap</li>
+    <li><b>v3　10/1</b>　新增每日路線動圖（路線圖＋實際地圖）；Hill 家機票已訂</li>
+    <li><b>v2　9/30</b>　Morris 家機票已訂，加入訂位狀態</li>
+    <li><b>v1　9/30</b>　首次發布到 GitHub Pages</li>
+  </ul>
+</section>
+
+<footer><p class="ver">版本 v14　最後更新 2026 年 10 月 6 日</p>營業時間、票價、班次可能變動，出發前請再到各官網確認。</footer>
 
 <script>
 (function(){
@@ -744,6 +774,16 @@ document.querySelectorAll('.routemap').forEach(build);
     });
   });
   if(document.querySelector('.budget')) calc();
+})();
+</script>
+<script>
+/* 頁首版本徽章由頁尾版本自動同步：改版時只要改頁尾那一行 */
+(function(){
+  var foot=document.querySelector(".ver"); if(!foot) return;
+  var m=foot.textContent.match(/版本\s*(v\d+)[^\d]*最後更新\s*(.+)$/); if(!m) return;
+  var n=document.querySelector(".tv-n"), d=document.querySelector(".tv-d");
+  if(n) n.textContent=m[1];
+  if(d) d.textContent="更新於 "+m[2].trim();
 })();
 </script>
 </body>
