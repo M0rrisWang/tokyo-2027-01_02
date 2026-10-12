@@ -132,16 +132,63 @@
   .notice h2{font-family:"Noto Serif TC",serif;font-size:19px;color:var(--line);margin-bottom:6px;line-height:1.4}
   .notice ol{padding-left:1.3em;margin:8px 0}
   .notice li{margin:4px 0}
+  .hero{position:relative;max-width:none;margin:0;padding:0;color:#fff;background:#1b2233 center/cover no-repeat;min-height:min(78vh,620px);display:flex;align-items:flex-end}
+  .hero::before{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(0,0,0,.15) 0%,rgba(0,0,0,.25) 40%,rgba(10,14,24,.82) 100%)}
+  .hero-in{position:relative;width:100%;max-width:720px;margin:0 auto;padding:40px 22px 30px}
+  .hero .title{color:#fff}
+  .hero .title span{color:rgba(255,255,255,.85)}
+  .hero .who{color:rgba(255,255,255,.92)}
+  .hero .who b{color:#fff}
+  .hero .tv-d{color:rgba(255,255,255,.85)}
+  .hero .tv-l{color:#fff}
+  .hero-eb{font-size:12px;letter-spacing:.18em;text-transform:uppercase;font-weight:700;color:rgba(255,255,255,.85);margin-bottom:6px}
+  .facts{max-width:720px;margin:18px auto 22px;padding:0 22px;display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:8px}
+  .facts div{background:var(--white);border:1px solid var(--ice);border-radius:12px;padding:10px 12px}
+  .facts b{display:block;font-size:17px;color:var(--line)}
+  .facts span{font-size:13px;color:var(--slate)}
+  .eyebrow{font-size:12px;letter-spacing:.14em;text-transform:uppercase;font-weight:700;color:var(--line);margin-bottom:2px}
+  section.info > h2{margin-top:6px}
+  .lead{color:var(--slate);margin-bottom:12px}
+  .dayfig{margin:0 0 12px}
+  .dayfig img{display:block;width:100%;aspect-ratio:16/9;object-fit:cover;border-radius:12px;background:var(--ice)}
+  .dayfig figcaption{font-size:12px;color:var(--slate);margin-top:4px}
+  .cards{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:14px}
+  .card{background:var(--white);border:1px solid var(--ice);border-radius:14px;overflow:hidden;display:flex;flex-direction:column}
+  .card img{display:block;width:100%;aspect-ratio:4/3;object-fit:cover;background:var(--ice)}
+  .card .body{padding:12px 14px 14px}
+  .card h3{font-family:"Noto Serif TC",serif;font-size:19px;line-height:1.35;margin:2px 0 6px}
+  .card h3 small{display:block;font-family:"Noto Sans TC",system-ui,sans-serif;font-size:12px;font-weight:500;color:var(--slate);letter-spacing:.02em}
+  .card p{font-size:15px}
+  .card .meta{font-size:13px;color:var(--slate);margin-top:8px;border-top:1px dashed var(--ice);padding-top:8px}
+  .tips{list-style:none;padding:0;display:grid;gap:8px}
+  .tips li{background:var(--white);border:1px solid var(--ice);border-radius:12px;padding:10px 14px}
+  .tips b{display:block;color:var(--line);font-size:14px}
+  .credits{padding-left:1.1em;font-size:13px;color:var(--slate)}
+  .credits a{color:var(--slate)}
+  .ititle{max-width:720px;margin:10px auto 0;padding:0 22px}
   footer{text-align:center;color:var(--slate);font-size:13px;padding:0 22px 40px}
 </style>
 </head>
 <body>
 
-<header>
-  <p class="topver"><span class="tv-n">v18</span><span class="tv-d">更新於 2026 年 10 月 8 日</span><a class="tv-l" href="#changelog">看改了什麼</a></p>
+<header class="hero" style="background-image:url('https://commons.wikimedia.org/wiki/Special:FilePath/Lantern%20of%20Kaminarimon%20Gate%20%282%29.JPG?width=1280')">
+  <div class="hero-in">
+  <p class="hero-eb">Tokyo · 東京 · Karuizawa · 2027</p>
+  <p class="topver"><span class="tv-n">v19</span><span class="tv-d">更新於 2026 年 10 月 12 日</span><a class="tv-l" href="#changelog">看改了什麼</a></p>
   <h1 class="title">東京冬旅<span>2027．1/28 – 2/5</span></h1>
   <p class="who">兩家人同行：<b>Morris 家</b>（Morris、Wiwi、安安、帆帆）＋ <b>Hill 家</b>（Hill、Nancy、Q寶、小波）。住宿以淺草站周邊為據點，2/4 晚上改住羽田 T3 直結飯店。兩家任何一天都可以分頭行動，預算可依各家參加項目分開計算。</p>
+  </div>
 </header>
+
+<div class="facts">
+  <div><b>1/28–2/5</b><span>9 天 8 夜・2 家 8 人</span></div>
+  <div><b>MM860</b><span>1/28 20:55 桃園起飛</span></div>
+  <div><b>IT217</b><span>2/5 05:00 羽田起飛</span></div>
+  <div><b>住宿</b><span>淺草 6 晚・PRANA 1 晚・羽田 1 晚</span></div>
+  <div><b>UTC+9</b><span>比臺灣快 1 小時</span></div>
+  <div><b>JPY</b><span>1 円 ≈ NT$0.20</span></div>
+  <div><b>冬季</b><span>東京約 1–10°C，輕井澤常在零下</span></div>
+</div>
 
 <div class="notice" id="luggage">
   <h2>⚠️ 重要：目前預計採用的行李處理方式</h2>
@@ -174,6 +221,10 @@
     <p class="toc-h">出發前準備</p>
     <div class="toc-links">
       <a href="#luggage">📦 行李處理方式</a>
+      <a href="#eat">🍜 必吃清單</a>
+      <a href="#sights">⛩️ 景點與歷史</a>
+      <a href="#transport">🚃 交通方式</a>
+      <a href="#tips">💡 出發前提醒</a>
       <a href="#flights">✈️ 機票與行李</a>
       <a href="#todo">✅ 待辦清單</a>
       <a href="#booking">🎫 訂票清單</a>
@@ -200,6 +251,7 @@
 </div>
 
 <section class="info" id="flights" style="padding-bottom:0">
+  <p class="eyebrow">Flights · TPE ⇄ HND</p>
   <h2>機票與行李（已確認）</h2>
   <div class="block"><h4>機票</h4>
     <ul><li>兩家都已透過 Agoda 訂好，各自有訂位代號（實付金額見下方訂位狀態）</li>
@@ -244,6 +296,7 @@
   </ul>
 </nav>
 
+<div class="ititle"><p class="eyebrow">Itinerary · 9 Days</p><h2 class="sech">每日行程</h2><p class="lead">時間都是日本當地時間（比臺灣快 1 小時）。每天可以切換「路線圖」和「實際地圖」看移動順序。</p></div>
 <main>
 <div class="rail">
 
@@ -251,6 +304,7 @@
     <p class="date">1/28（四）深夜 → 1/29 凌晨</p>
     <p class="party">👨‍👩‍👧‍👦 兩家同行（可分頭行動）</p>
     <h2>抵達羽田，前往淺草</h2>
+    <figure class="dayfig"><img src="https://commons.wikimedia.org/wiki/Special:FilePath/Haneda-airport-terminal%203%20departure.jpg?width=1280" alt="羽田機場第 3 航廈出境大廳" loading="lazy"><figcaption>羽田機場第 3 航廈出境大廳</figcaption></figure>
     <div class="routemap" data-route="d0128"></div>
     <div class="block"><h4>交通</h4>
       <ul><li>00:50 抵達 T3，出關約 1:30–2:00，此時電車已收班</li>
@@ -264,6 +318,7 @@
     <p class="date">1/29（五）</p>
     <p class="party">👨‍👩‍👧‍👦 兩家同行（可分頭行動）</p>
     <h2>哈利波特影城</h2>
+    <figure class="dayfig"><img src="https://commons.wikimedia.org/wiki/Special:FilePath/Warner%20Bros%20Studio%20Tour%20Tokyo%202024-11-03.jpg?width=1280" alt="哈利波特影城" loading="lazy"><figcaption>哈利波特影城</figcaption></figure>
     <div class="routemap" data-route="d0129"></div>
     <div class="block"><h4>交通</h4>
       <ul><li>銀座線到上野 → JR 山手線到池袋 → 西武池袋線到豐島園，約 45–50 分鐘</li>
@@ -279,6 +334,7 @@
     <p class="date">1/30（六）</p>
     <p class="party">👨‍👩‍👧‍👦 兩家同行（可分頭行動）</p>
     <h2>輕井澤：玩雪、星野溫泉蜻蜓之湯、榆樹街小鎮</h2>
+    <figure class="dayfig"><img src="https://commons.wikimedia.org/wiki/Special:FilePath/Prince%20Snow%20Resort%20Karuizawa.JPG?width=1280" alt="輕井澤王子大飯店滑雪場" loading="lazy"><figcaption>輕井澤王子大飯店滑雪場</figcaption></figure>
     <div class="routemap" data-route="d0130"></div>
     <div class="block"><h4>交通</h4>
       <ul><li>上野搭北陸新幹線到輕井澤，約 1 小時，8 人指定席要提前劃位</li>
@@ -308,6 +364,7 @@
     <p class="date">1/31（日）</p>
     <p class="party">👨‍👩‍👧‍👦 兩家同行（可分頭行動）</p>
     <h2>台場 → 入住三井花園飯店 PRANA（新浦安）</h2>
+    <figure class="dayfig"><img src="https://commons.wikimedia.org/wiki/Special:FilePath/Rainbow%20Bridge%20%40%20New%20Transit%20Yurikamome%20train%20to%20Odaiba%20%289733343386%29.jpg?width=1280" alt="從百合海鷗號看彩虹大橋" loading="lazy"><figcaption>從百合海鷗號看彩虹大橋</figcaption></figure>
     <div class="routemap" data-route="d0131"></div>
     <div class="block"><h4>行李</h4>
       <ul><li>📦 迪士尼箱 1/30 早上已寄到 PRANA，今天全家空手出門</li>
@@ -330,6 +387,7 @@
     <p class="date">2/1（一）</p>
     <p class="party">👨‍👩‍👧‍👦 兩家同行（可分頭行動）</p>
     <h2>東京迪士尼海洋</h2>
+    <figure class="dayfig"><img src="https://commons.wikimedia.org/wiki/Special:FilePath/Tokyo%20DisneySea%20-%20A%20Walk%20Along%20Mount%20Prometheus.jpg?width=1280" alt="迪士尼海洋普羅米修斯火山" loading="lazy"><figcaption>迪士尼海洋普羅米修斯火山</figcaption></figure>
     <div class="routemap" data-route="d0201"></div>
     <div class="block"><h4>交通與行李</h4>
       <ul><li>📦 早上退房時，在 PRANA 1 樓宅配櫃台寄出迪士尼箱 → 淺草飯店（2/2 送達）</li>
@@ -345,6 +403,7 @@
     <p class="date">2/2（二）</p>
     <p class="party">👨‍👩‍👧‍👦 兩家同行（可分頭行動）</p>
     <h2>澀谷：挽肉と米、任天堂、寶可夢中心 → 夜遊觀光巴士</h2>
+    <figure class="dayfig"><img src="https://commons.wikimedia.org/wiki/Special:FilePath/Shibuya%20scramble%20crossing%20during%20Halloween%202023%2C%20actually%20less%20crowded%20than%20usual%2C%20high%20police%20presence%202.jpg?width=1280" alt="澀谷十字路口" loading="lazy"><figcaption>澀谷十字路口</figcaption></figure>
     <div class="routemap" data-route="d0202"></div>
     <div class="block"><h4>交通</h4>
       <ul><li>淺草搭銀座線直達澀谷，約 30 分鐘，不用轉車</li></ul></div>
@@ -376,6 +435,7 @@
     <p class="date">2/3（三）</p>
     <p class="party">🔀 分頭行動：Hill 家去吉卜力美術館，Morris 家去井之頭自然文化園，13:00 會合</p>
     <h2>分頭行動日：吉卜力美術館／井之頭動物園 → 吉祥寺</h2>
+    <figure class="dayfig"><img src="https://commons.wikimedia.org/wiki/Special:FilePath/Ghibli%20Museum%20-%20GhibliMuseum864.jpg?width=1280" alt="三鷹之森吉卜力美術館" loading="lazy"><figcaption>三鷹之森吉卜力美術館</figcaption></figure>
     <div class="routemap" data-route="d0203"></div>
     <div class="block"><h4>交通</h4>
       <ul><li>08:40 兩家一起從淺草出發：銀座線到神田 → JR 中央線快速</li>
@@ -407,6 +467,7 @@
     <p class="date">2/4（四）</p>
     <p class="party">👨‍👩‍👧‍👦 兩家同行（可分頭行動）</p>
     <h2>淺草雷門、晴空塔，晚上移動到羽田</h2>
+    <figure class="dayfig"><img src="https://commons.wikimedia.org/wiki/Special:FilePath/Senso-ji%20main%20hall%20012006.JPG?width=1280" alt="淺草寺本堂" loading="lazy"><figcaption>淺草寺本堂</figcaption></figure>
     <div class="routemap" data-route="d0204"></div>
     <div class="block"><h4>行程</h4>
       <ul><li>上午：先退房寄放行李 → 雷門 → 仲見世通 → 淺草寺</li>
@@ -435,6 +496,7 @@
     <p class="date">2/5（五）除夕</p>
     <p class="party">👨‍👩‍👧‍👦 兩家同行（可分頭行動）</p>
     <h2>回台灣</h2>
+    <figure class="dayfig"><img src="https://commons.wikimedia.org/wiki/Special:FilePath/Haneda-airport-terminal%203%20departure.jpg?width=1280" alt="羽田機場第 3 航廈出境大廳" loading="lazy"><figcaption>羽田機場第 3 航廈出境大廳</figcaption></figure>
     <div class="routemap" data-route="d0205"></div>
     <div class="block"><h4>時間</h4>
       <ul><li>01:45 從飯店出發，<b>02:00 抵達虎航報到櫃台</b>（起飛前 3 小時）</li>
@@ -445,7 +507,58 @@
 </div>
 </main>
 
+<section class="info" id="eat">
+  <p class="eyebrow">Must Eat · 5 道</p>
+  <h2>必吃清單</h2>
+  <p class="lead">行程裡排好的幾頓重點餐，價格是店家常見價位。</p>
+  <div class="cards">
+    <article class="card"><img src="https://commons.wikimedia.org/wiki/Special:FilePath/%E3%83%8F%E3%83%B3%E3%83%90%E3%83%BC%E3%82%B0.jpg?width=1280" alt="日式漢堡排" loading="lazy"><div class="body"><p class="eyebrow">Day 2/2 午餐</p><h3>挽肉と米<small>Hikiniku to Come</small></h3><p>炭火直烤的漢堡排一份三顆，配羽釜現煮白飯，白飯可續、附生雞蛋。</p><p class="meta">定食約 ¥1,980・澀谷店・1/1 開放網路記帳</p></div></article>
+    <article class="card"><img src="https://commons.wikimedia.org/wiki/Special:FilePath/Yakiniku%20grill.jpg?width=1280" alt="燒肉" loading="lazy"><div class="body"><p class="eyebrow">Day 2/4 午餐</p><h3>浅草焼肉 昊授苑<small>KOUJU-EN</small></h3><p>雷門旁 THE CITY 浅草雷門 3 樓的和風燒肉店，有沙發席和半包廂，適合 8 人。</p><p class="meta">午餐 11:30–15:00・12 月中確認網路預約</p></div></article>
+    <article class="card"><img src="https://commons.wikimedia.org/wiki/Special:FilePath/Matcha%20ice%20cream%20001.jpg?width=1280" alt="抹茶冰淇淋" loading="lazy"><div class="body"><p class="eyebrow">Day 2/4 下午</p><h3>壽々喜園 × ななや<small>抹茶義式冰淇淋</small></h3><p>百年茶舖和靜岡ななや合作，抹茶濃度分 No.1–7，No.7 號稱世界最濃。</p><p class="meta">約 11:00–17:00・不定休・常排隊</p></div></article>
+    <article class="card"><img src="https://commons.wikimedia.org/wiki/Special:FilePath/Menchi-katsu%20%28minced%20pork%20cutlet%29%20with%20cheese%20source%2C%20F%C5%ABmu-d%C5%8D%2C%20Sotokanda%202%20%28%E3%83%81%E3%83%BC%E3%82%BA%E3%81%BE%E3%81%BF%E3%82%8C%E3%83%A1%E3%83%B3%E3%83%81%2C%20%E9%A2%A8%E5%A4%A2%E5%A0%82%2C%20%E5%A4%96%E7%A5%9E%E7%94%B02%29%20%282011-05-26%2013.48.59%20by%20yuiseki%20aoba%29.jpg?width=1280" alt="炸肉餅" loading="lazy"><div class="body"><p class="eyebrow">Day 2/3 午餐</p><h3>SATOU 炸肉餅<small>元祖丸メンチカツ</small></h3><p>吉祥寺的名物，肉汁多、外皮酥，常要排隊外帶，邊逛邊吃。</p><p class="meta">吉祥寺 Sun Road 附近</p></div></article>
+    <article class="card"><img src="https://commons.wikimedia.org/wiki/Special:FilePath/Bowl%20of%20ramen.jpg?width=1280" alt="拉麵" loading="lazy"><div class="body"><p class="eyebrow">Day 1/31・2/2</p><h3>拉麵<small>Ramen</small></h3><p>1/31 台場 AQUA CITY 的拉麵國技館，一次聚集多家名店；2/2 晚上東京站一番街的拉麵街。</p><p class="meta">一碗約 ¥1,000–1,500</p></div></article>
+  </div>
+</section>
+
+<section class="info" id="sights">
+  <p class="eyebrow">Sights</p>
+  <h2>景點與歷史</h2>
+  <p class="lead">每張卡片標了造訪的日期，順便讀一下它的由來。</p>
+  <div class="cards">
+    <article class="card"><img src="https://commons.wikimedia.org/wiki/Special:FilePath/Senso-ji%20main%20hall%20012006.JPG?width=1280" alt="淺草寺本堂" loading="lazy"><div class="body"><p class="eyebrow">Day 2/4 上午</p><h3>雷門・淺草寺<small>Sensō-ji</small></h3><p>東京最古老的寺院。傳說 628 年一對漁夫兄弟在隅田川撈起一尊觀音像，供奉起來就是淺草寺的起源。雷門正式名稱是「風雷神門」，現在的門是 1960 年由松下幸之助捐贈重建，正中央的大紅燈籠是淺草的代表風景。</p><p class="meta">免費參拜・仲見世通約 250 公尺</p></div></article>
+    <article class="card"><img src="https://commons.wikimedia.org/wiki/Special:FilePath/Worm%27s-eye%20view%20of%20Tokyo%20Skytree%20with%20vertical%20symmetry%20impression%2C%20a%20sunny%20day%2C%20in%20Japan.jpg?width=1280" alt="東京晴空塔" loading="lazy"><div class="body"><p class="eyebrow">Day 2/4 下午</p><h3>東京晴空塔<small>Tokyo Skytree</small></h3><p>2012 年開幕的電波塔，高 634 公尺，數字諧音日本古地名「武藏」（むさし）。350 公尺的天望甲板和 450 公尺的天望迴廊，天氣好時看得到富士山。</p><p class="meta">淺草線一站到押上</p></div></article>
+    <article class="card"><img src="https://commons.wikimedia.org/wiki/Special:FilePath/Ghibli%20Museum%20-%20GhibliMuseum864.jpg?width=1280" alt="三鷹之森吉卜力美術館" loading="lazy"><div class="body"><p class="eyebrow">Day 2/3 上午・Hill 家</p><h3>三鷹之森吉卜力美術館<small>Ghibli Museum</small></h3><p>2001 年開館，宮崎駿親自參與設計，館內不設固定動線，鼓勵大家「一起迷路吧」。屋頂花園站著《天空之城》的機器人兵。館內禁止拍照。</p><p class="meta">指定入場時間制・Lawson 購票</p></div></article>
+    <article class="card"><img src="https://commons.wikimedia.org/wiki/Special:FilePath/Inokashira%20Park%20Momiji.jpg?width=1280" alt="井之頭恩賜公園" loading="lazy"><div class="body"><p class="eyebrow">Day 2/3・Morris 家</p><h3>井之頭恩賜公園<small>Inokashira Park</small></h3><p>1917 年開園，是日本第一座郊外公園。井之頭池是神田川的源頭，江戶時代曾是江戶城的上水道水源。園內的自然文化園有放養松鼠和天竺鼠互動。</p><p class="meta">自然文化園 9:30–17:00・週一休</p></div></article>
+    <article class="card"><img src="https://commons.wikimedia.org/wiki/Special:FilePath/Prince%20Snow%20Resort%20Karuizawa.JPG?width=1280" alt="輕井澤王子大飯店滑雪場" loading="lazy"><div class="body"><p class="eyebrow">Day 1/30</p><h3>輕井澤<small>Karuizawa</small></h3><p>1886 年加拿大傳教士 Alexander Croft Shaw 來這裡避暑後，輕井澤成為外國人和名流的避暑勝地。海拔約 1,000 公尺，冬天常下雪，車站旁就是滑雪場。</p><p class="meta">北陸新幹線上野出發約 1 小時</p></div></article>
+    <article class="card"><img src="https://commons.wikimedia.org/wiki/Special:FilePath/Rainbow%20Bridge%20by%20night%20seen%20from%20Odaiba%20side.jpg?width=1280" alt="台場看彩虹大橋夜景" loading="lazy"><div class="body"><p class="eyebrow">Day 1/31</p><h3>台場<small>Odaiba</small></h3><p>「台場」的名字來自 1853 年黑船來航後，江戶幕府在東京灣築的砲台；第三台場至今還保留在台場公園。1990 年代填海開發成臨海副都心。</p><p class="meta">百合海鷗號・新橋出發</p></div></article>
+    <article class="card"><img src="https://commons.wikimedia.org/wiki/Special:FilePath/Tokyo%20DisneySea%20-%20A%20Walk%20Along%20Mount%20Prometheus.jpg?width=1280" alt="迪士尼海洋普羅米修斯火山" loading="lazy"><div class="body"><p class="eyebrow">Day 2/1</p><h3>東京迪士尼海洋<small>Tokyo DisneySea</small></h3><p>2001 年開幕，全世界唯一以「海洋」為主題的迪士尼樂園，中央的普羅米修斯火山是地標。2024 年新園區「夢幻泉鄉」開幕。</p><p class="meta">PRANA 免費接駁巴士約 15–20 分鐘</p></div></article>
+    <article class="card"><img src="https://commons.wikimedia.org/wiki/Special:FilePath/Warner%20Bros%20Studio%20Tour%20Tokyo%202024-11-03.jpg?width=1280" alt="哈利波特影城" loading="lazy"><div class="body"><p class="eyebrow">Day 1/29</p><h3>哈利波特影城<small>Warner Bros. Studio Tour Tokyo</small></h3><p>2023 年 6 月在練馬區豐島園遊樂園舊址開幕，是亞洲第一座、全世界第二座華納兄弟哈利波特影城，可以走進大廳堂、斜角巷和 9¾ 月台。</p><p class="meta">預約 13:00 後場次・至少 3–4 小時</p></div></article>
+  </div>
+</section>
+
+<section class="info" id="transport">
+  <p class="eyebrow">Getting Around</p>
+  <h2>交通方式</h2>
+  <p class="lead">淺草站有銀座線和都營淺草線，大部分行程搭電車就到；需要搬行李時才叫車或用宅急便。</p>
+  <div class="tablewrap"><table>
+    <thead><tr><th>交通工具</th><th>用在哪裡</th><th>費用</th></tr></thead>
+    <tbody>
+      <tr><td>Suica／PASMO</td><td>地鐵、JR、百合海鷗號、公車都能刷；小孩買兒童 Welcome Suica</td><td>小孩半價</td></tr>
+      <tr><td>東京 Metro・都營地鐵</td><td>淺草出發的主要交通，淺草線直通羽田</td><td>約 ¥180–330／趟</td></tr>
+      <tr><td>JR 山手線・中央線・京葉線</td><td>池袋、吉祥寺、三鷹、舞濱、新浦安</td><td>約 ¥150–500／趟</td></tr>
+      <tr><td>北陸新幹線</td><td>1/30 上野 ⇄ 輕井澤，約 1 小時</td><td>來回約 ¥11,000–12,000／大人</td></tr>
+      <tr><td>百合海鷗號</td><td>1/31 新橋 ⇄ 台場，坐第一節車廂</td><td>約 ¥250–390</td></tr>
+      <tr><td>PRANA 接駁巴士</td><td>飯店 ⇄ 迪士尼兩座樂園</td><td>免費</td></tr>
+      <tr><td>KKday 10 人座</td><td>1/29 凌晨羽田 → 淺草，兩家同車</td><td>約 NT$2,520／車</td></tr>
+      <tr><td>計程車</td><td>備案；一台最多 4 人</td><td>羽田→台東區深夜定額 ¥10,800</td></tr>
+      <tr><td>宅急便</td><td>迪士尼箱 1/30 寄出、2/1 寄回</td><td>每件約 ¥2,700–3,000</td></tr>
+    </tbody>
+  </table></div>
+  <p class="todo-hint">平日 7:30–9:30、17:00–19:00 是通勤尖峰，帶小孩和行李盡量避開。</p>
+</section>
+
 <section class="info" id="todo">
+  <p class="eyebrow">To Do</p>
   <h2>To Do List（10/8 更新）</h2>
   <p class="todo-hint">勾選狀態只會存在你自己的瀏覽器裡，不會同步給其他人。</p>
 
@@ -513,6 +626,7 @@
 </section>
 
 <section class="info" id="backup">
+  <p class="eyebrow">Plan B</p>
   <h2>雨天或強風備案：三麗鷗彩虹樂園</h2>
   <div class="block"><h4>什麼時候用</h4>
     <ul><li>1/31 強風使水陸兩用巴士停駛，或台場天氣太差時</li>
@@ -525,6 +639,7 @@
 </section>
 
 <section class="info" id="hotels">
+  <p class="eyebrow">Stay · 8 Nights</p>
   <h2>住宿安排（大行李箱只搬 2 次）</h2>
   <div class="tablewrap"><table>
     <thead><tr><th>日期</th><th>住宿</th><th>房間</th></tr></thead>
@@ -552,6 +667,7 @@
 </section>
 
 <section class="info" id="budget">
+  <p class="eyebrow">Budget</p>
   <h2>預算估算（分家計算）</h2>
   <p class="todo-hint">金額為「每家」的估算。某一家不參加的項目，取消勾選就會從那一家的合計扣除。台幣以 1 日圓 ≈ 0.20 台幣估算（2026/9/30 台銀牌告約 0.20），刷卡另有海外手續費約 1.5%。勾選狀態只存在你自己的瀏覽器裡。</p>
   <div class="tablewrap"><table class="budget">
@@ -587,6 +703,7 @@
 </section>
 
 <section class="info" id="booking">
+  <p class="eyebrow">Tickets</p>
   <h2>訂票清單</h2>
   <div class="tablewrap"><table>
     <thead><tr><th>項目</th><th>開賣時間／注意</th></tr></thead>
@@ -615,9 +732,25 @@
   </table></div>
 </section>
 
+<section class="info" id="tips">
+  <p class="eyebrow">Good to Know</p>
+  <h2>出發前小提醒</h2>
+  <p class="lead"></p>
+  <ul class="tips">
+    <li><b>入境</b>出發前在 Visit Japan Web 登錄入境和海關資料，入境時出示 QR Code。</li>
+    <li><b>天氣</b>1 月底東京白天約 10°C、早晚接近 0°C，輕井澤常在零下；帽子、手套、圍巾和厚外套都要帶。</li>
+    <li><b>插座</b>日本 100V、A 型雙平腳插座，和臺灣相同，一般不用轉接頭。</li>
+    <li><b>付款</b>大多可以刷卡，挽肉と米只收卡；小店、寺廟和扭蛋要準備零錢。</li>
+    <li><b>免稅</b>日本的退稅制度 2026 年 11 月起改為先付稅、出境時退稅，出發前確認最新規定，購物記得帶護照。</li>
+    <li><b>電車</b>車廂內不講電話、背包背在前面；兒童 Suica 要用護照購買。</li>
+  </ul>
+</section>
+
 <section class="info" id="changelog">
+  <p class="eyebrow">Changelog</p>
   <h2>更新紀錄</h2>
   <ul class="changelog">
+    <li><b>v19　10/12</b>　改版為圖文並茂：首頁大圖與重點資訊、每日行程配圖，新增必吃清單、景點與歷史、交通方式、出發前小提醒和照片來源</li>
     <li><b>v18　10/8</b>　全站校對：清除舊的迪士尼飯店與機票查價文字；1/30 大雪備案改為三麗鷗樂園；待辦清單重新分類；2/5 改為 02:00 抵達報到櫃台</li>
     <li><b>v17　10/8</b>　頁首加上「重要：目前預計採用的行李處理方式」；迪士尼住宿改為三井花園飯店 PRANA 東京灣；採用一家一個迪士尼箱＋宅急便；1/30–2/2 行程、路線動圖、預算、待辦同步更新</li>
     <li><b>v16　10/6</b>　1/29 凌晨接機改為 KKday 10 人座廂型車（兩家同車），待淺草飯店確定後預訂；預算接送費改為實際查價</li>
@@ -639,7 +772,40 @@
   </ul>
 </section>
 
-<footer><p class="ver">版本 v18　最後更新 2026 年 10 月 8 日</p>營業時間、票價、班次可能變動，出發前請再到各官網確認。</footer>
+<section class="info" id="credits">
+  <p class="eyebrow">Photo Credits</p>
+  <h2>照片來源（Wikimedia Commons）</h2>
+  <ul class="credits">
+    <li><a href="https://commons.wikimedia.org/wiki/File:Lantern_of_Kaminarimon_Gate_%282%29.JPG" target="_blank" rel="noopener">雷門大燈籠</a> · Tokumeigakarinoaoshima · CC0</li>
+    <li><a href="https://commons.wikimedia.org/wiki/File:Haneda-airport-terminal_3_departure.jpg" target="_blank" rel="noopener">羽田機場第 3 航廈出境大廳</a> · ScribblingGeek · CC BY-SA 4.0</li>
+    <li><a href="https://commons.wikimedia.org/wiki/File:Warner_Bros_Studio_Tour_Tokyo_2024-11-03.jpg" target="_blank" rel="noopener">哈利波特影城</a> · Asanagi · CC0</li>
+    <li><a href="https://commons.wikimedia.org/wiki/File:Prince_Snow_Resort_Karuizawa.JPG" target="_blank" rel="noopener">輕井澤王子大飯店滑雪場</a> · Ski Mania · Public domain</li>
+    <li><a href="https://commons.wikimedia.org/wiki/File:Shinkansen_E7_series_passing_through_platforms_of_Ueda_Station.jpg" target="_blank" rel="noopener">北陸新幹線 E7 系</a> · 雑用部 · CC BY-SA 4.0</li>
+    <li><a href="https://commons.wikimedia.org/wiki/File:160730_Harunire_Terrace_Karuizawa_Nagano_pref_Japan03n.jpg" target="_blank" rel="noopener">榆樹街小鎮</a> · 663highland · CC BY 2.5</li>
+    <li><a href="https://commons.wikimedia.org/wiki/File:Rainbow_Bridge_%40_New_Transit_Yurikamome_train_to_Odaiba_%289733343386%29.jpg" target="_blank" rel="noopener">從百合海鷗號看彩虹大橋</a> · Guilhem Vellut · CC BY 2.0</li>
+    <li><a href="https://commons.wikimedia.org/wiki/File:Rainbow_Bridge_by_night_seen_from_Odaiba_side.jpg" target="_blank" rel="noopener">台場看彩虹大橋夜景</a> · Syced · CC0</li>
+    <li><a href="https://commons.wikimedia.org/wiki/File:Tokyo_DisneySea_-_A_Walk_Along_Mount_Prometheus.jpg" target="_blank" rel="noopener">迪士尼海洋普羅米修斯火山</a> · Okwhatev · CC BY-SA 2.5</li>
+    <li><a href="https://commons.wikimedia.org/wiki/File:Shibuya_scramble_crossing_during_Halloween_2023%2C_actually_less_crowded_than_usual%2C_high_police_presence_2.jpg" target="_blank" rel="noopener">澀谷十字路口</a> · Syced · CC0</li>
+    <li><a href="https://commons.wikimedia.org/wiki/File:Tokyo_Tower%2C_Minato_City.jpg" target="_blank" rel="noopener">東京鐵塔</a> · David Kernan · CC BY 4.0</li>
+    <li><a href="https://commons.wikimedia.org/wiki/File:Marunouchi_Central_Plaza_with_blue_sky%2C_Tokyo_station_and_Shin-Marunouchi_Building%2C_panoramic_view_from_JP_Tower%2C_Tokyo%2C_Japan.jpg" target="_blank" rel="noopener">東京站丸之內</a> · Basile Morin · CC BY-SA 4.0</li>
+    <li><a href="https://commons.wikimedia.org/wiki/File:Ghibli_Museum_-_GhibliMuseum864.jpg" target="_blank" rel="noopener">三鷹之森吉卜力美術館</a> · lumoplank · CC0</li>
+    <li><a href="https://commons.wikimedia.org/wiki/File:Inokashira_Park_Zoo_PC052801.jpg" target="_blank" rel="noopener">井之頭自然文化園</a> · Kestrel · CC BY-SA 4.0</li>
+    <li><a href="https://commons.wikimedia.org/wiki/File:Inokashira_Park_Momiji.jpg" target="_blank" rel="noopener">井之頭恩賜公園</a> · Htanaungg · CC BY-SA 4.0</li>
+    <li><a href="https://commons.wikimedia.org/wiki/File:In_Harmonica_Yokocho%2C_Kichijoji_%2853417121000%29.jpg" target="_blank" rel="noopener">吉祥寺口琴橫丁</a> · Stephen Kelly · CC BY 2.0</li>
+    <li><a href="https://commons.wikimedia.org/wiki/File:Senso-ji_main_hall_012006.JPG" target="_blank" rel="noopener">淺草寺本堂</a> · Arc · CC BY 2.5</li>
+    <li><a href="https://commons.wikimedia.org/wiki/File:Hozomon_Gate%2C_Tokyo%2C_South_view_from_Nakamise_Shopping_Street_20190420_1.jpg" target="_blank" rel="noopener">仲見世通與寶藏門</a> · DXR · CC BY-SA 4.0</li>
+    <li><a href="https://commons.wikimedia.org/wiki/File:Worm%27s-eye_view_of_Tokyo_Skytree_with_vertical_symmetry_impression%2C_a_sunny_day%2C_in_Japan.jpg" target="_blank" rel="noopener">東京晴空塔</a> · Basile Morin · CC BY-SA 4.0</li>
+    <li><a href="https://commons.wikimedia.org/wiki/File:%E3%83%8F%E3%83%B3%E3%83%90%E3%83%BC%E3%82%B0.jpg" target="_blank" rel="noopener">日式漢堡排</a> · Shisma · CC BY 4.0</li>
+    <li><a href="https://commons.wikimedia.org/wiki/File:Yakiniku_grill.jpg" target="_blank" rel="noopener">燒肉</a> · Matt Biddulph · CC BY-SA 2.0</li>
+    <li><a href="https://commons.wikimedia.org/wiki/File:Matcha_ice_cream_001.jpg" target="_blank" rel="noopener">抹茶冰淇淋</a> · City Foodsters · CC BY 2.0</li>
+    <li><a href="https://commons.wikimedia.org/wiki/File:Menchi-katsu_%28minced_pork_cutlet%29_with_cheese_source%2C_F%C5%ABmu-d%C5%8D%2C_Sotokanda_2_%28%E3%83%81%E3%83%BC%E3%82%BA%E3%81%BE%E3%81%BF%E3%82%8C%E3%83%A1%E3%83%B3%E3%83%81%2C_%E9%A2%A8%E5%A4%A2%E5%A0%82%2C_%E5%A4%96%E7%A5%9E%E7%94%B02%29_%282011-05-26_13.48.59_by_yuiseki_aoba%29.jpg" target="_blank" rel="noopener">炸肉餅</a> · yuiseki aoba · CC BY 2.0</li>
+    <li><a href="https://commons.wikimedia.org/wiki/File:Bowl_of_ramen.jpg" target="_blank" rel="noopener">拉麵</a> · Douglas Perkins · CC BY 4.0</li>
+    <li><a href="https://commons.wikimedia.org/wiki/File:Kodakara-yu.jpg" target="_blank" rel="noopener">江戶東京建築園 子寶湯</a> · Wiiii · CC BY-SA 3.0</li>
+    <li><a href="https://commons.wikimedia.org/wiki/File:Sanrio_Puroland.jpg" target="_blank" rel="noopener">三麗鷗彩虹樂園</a> · Kakidai · CC BY-SA 4.0</li>
+  </ul>
+</section>
+
+<footer><p class="ver">版本 v19　最後更新 2026 年 10 月 12 日</p>營業時間、票價、班次可能變動，出發前請再到各官網確認。</footer>
 
 <script>
 (function(){
